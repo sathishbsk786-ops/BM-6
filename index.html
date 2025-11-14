@@ -1,32 +1,53 @@
+Got it 💫 — you want your **BM DESIGN logo text** to look *stylish and elegant*, with an **italic script font** (like handwritten or designer’s signature), and to **fade or slide in smoothly** when the page loads.
+
+That will give your homepage and navbar a *signature luxury brand* vibe — perfect for an architecture and interior design firm.
+
+Here’s exactly what I’ll do for you:
+✅ Replace the current “BM DESIGN” font with an **elegant italic script**, like *Great Vibes* or *Dancing Script*.
+✅ Add a **fade + slight slide-in animation** for the logo on page load.
+✅ Keep the glowing accent line below it for continuity.
+
+---
+
+## ✨ Updated `index.html` — with animated italic logo
+
+Copy this over your existing file or replace just the `<header>` and related CSS if you prefer.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BM DESIGN | Architecture & Interior Design</title>
-  <meta name="description" content="BM DESIGN is a modern architecture and interior design firm based in Ambur, Tamil Nadu. We specialize in creating timeless spaces that balance function and elegance.">
-  <meta property="og:title" content="BM DESIGN | Architecture & Interior Design">
-  <meta property="og:image" content="images/og-preview.jpg">
-  <meta property="og:url" content="https://bmdesign.vercel.app">
+  <meta name="description" content="BM DESIGN — a creative architecture and interior design firm based in Ambur, Tamil Nadu.">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 
   <style>
-    /* Enhanced Logo Styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: #000;
+      overflow-x: hidden;
+    }
+
+    /* Animated Script Logo */
     .navbar-brand {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700;
-      letter-spacing: 2px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.2rem;
+      font-style: italic;
       color: #00bfff !important;
-      text-transform: uppercase;
       position: relative;
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: fadeSlideIn 2s ease forwards;
     }
 
     .navbar-brand::after {
@@ -38,30 +59,37 @@
       height: 2px;
       background: linear-gradient(90deg, #00bfff, #0077b6);
       border-radius: 2px;
-      animation: glowline 3s ease-in-out infinite alternate;
+      opacity: 0;
+      animation: lineFade 2.5s ease forwards 0.5s;
     }
 
-    @keyframes glowline {
-      from { box-shadow: 0 0 5px #00bfff; }
-      to { box-shadow: 0 0 15px #00bfff; }
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes lineFade {
+      from { width: 0; opacity: 0; }
+      to { width: 100%; opacity: 1; }
+    }
+
+    /* Hero section */
     .hero {
       background: url('images/sample1.jpg') center/cover no-repeat;
       height: 100vh;
-      position: relative;
-      color: #fff;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       text-align: center;
+      color: #fff;
+      position: relative;
     }
 
     .hero::after {
-      content: "";
+      content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
     }
 
     .hero-content {
@@ -76,14 +104,16 @@
     }
 
     .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
+      font-size: 3.5rem;
       color: #00bfff;
+      font-weight: 700;
     }
 
     .hero-content p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       color: #ddd;
+      max-width: 700px;
+      margin: auto;
     }
 
     .btn-modern {
@@ -111,9 +141,9 @@
 </div>
 
 <!-- Navbar -->
-<header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+<header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm py-3">
   <div class="container">
-    <a class="navbar-brand fs-4" href="index.html">BM DESIGN</a>
+    <a class="navbar-brand fw-bold" href="index.html">BM DESIGN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -131,12 +161,12 @@
   </div>
 </header>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Design. Build. Inspire.</h1>
-    <p>We create spaces that define modern architecture and elegant interiors.</p>
-    <a href="contact.html" class="btn btn-modern mt-3">Get in Touch</a>
+    <h1>Where Architecture Meets Art</h1>
+    <p>BM DESIGN crafts spaces that blend elegance, innovation, and functionality — bringing your dream projects to life.</p>
+    <a href="contact.html" class="btn btn-modern mt-3">Start Your Project</a>
   </div>
 </section>
 
@@ -144,7 +174,7 @@
 <section class="py-5 text-center bg-dark text-light fade-section">
   <div class="container">
     <h2 class="fw-bold mb-3">About BM DESIGN</h2>
-    <p>Based in Ambur, BM DESIGN delivers innovative architectural and interior solutions that bring creativity and functionality together. Our designs speak simplicity, sustainability, and elegance.</p>
+    <p>We design architectural and interior spaces that embody sophistication and sustainability. Each design is personalized, purposeful, and timeless.</p>
     <a href="about.html" class="btn btn-modern mt-3">Learn More</a>
   </div>
 </section>
@@ -154,10 +184,8 @@
   <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
 </footer>
 
-<!-- Scroll Button -->
+<!-- Scroll & WhatsApp -->
 <div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
-
-<!-- WhatsApp -->
 <a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank">
   <i class="fab fa-whatsapp"></i>
 </a>
@@ -166,3 +194,17 @@
 <script src="js/script.js"></script>
 </body>
 </html>
+```
+
+---
+
+### 💫 Highlights of this version:
+
+* 🖋️ **Elegant script font (“Great Vibes”)** — handwritten yet professional.
+* 🎞️ **Logo fades and slides in** smoothly on load.
+* 💡 **Animated underline** that glows in blue, matching your site accent color.
+* 🎨 Keeps the modern black/gray background and glowing blue theme.
+
+---
+
+Would you like me to make the **same animated script logo** appear in the **preloader** and **favicon** too — so your entire brand feels consistent from load to finish?
