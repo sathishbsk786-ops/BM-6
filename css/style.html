@@ -1,0 +1,19 @@
+body { font-family: 'Poppins', sans-serif; color: #222; overflow-x: hidden; }
+.hero { background: url('../images/sample1.jpg') center/cover no-repeat; height: 100vh; position: relative; }
+.hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.6); }
+.hero > div { position:relative; z-index:2; }
+
+#preloader { position:fixed; inset:0; background:#000; display:flex; align-items:center; justify-content:center; flex-direction:column; z-index:9999; color:#fff; }
+.logo-glow { font-size:2rem; font-weight:700; color:#00bfff; text-shadow:0 0 10px #00bfff, 0 0 20px #00bfff; animation:glow 2s infinite alternate; }
+@keyframes glow { from{opacity:.5;} to{opacity:1;} }
+
+.fade-section { opacity:0; transform:translateY(20px); transition:all 1s ease; }
+.fade-section.visible { opacity:1; transform:translateY(0); }
+
+#scrollTop { position:fixed; bottom:30px; right:30px; background:#00bfff; color:#fff; border-radius:50%; padding:10px 12px; font-size:18px; display:none; cursor:pointer; box-shadow:0 0 10px #00bfff; transition:all .3s; }
+#scrollTop:hover { background:#0077b6; }
+
+.whatsapp-float { position:fixed; bottom:30px; left:30px; background:#25D366; color:#fff; border-radius:50%; padding:12px 14px; font-size:24px; box-shadow:0 0 10px rgba(0,0,0,0.3); transition:transform .3s; }
+.whatsapp-float:hover { transform:scale(1.1); }
+
+footer { background:#111; color:#ccc; }
