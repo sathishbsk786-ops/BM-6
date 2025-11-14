@@ -3,20 +3,103 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BM DESIGN Architecture and Interior Design</title>
-  <meta name="description" content="BM DESIGN offers modern architectural, interior, and construction solutions in Ambur, Tamil Nadu.">
-  <meta name="keywords" content="architecture, interior design, construction, architects in Ambur, building design, BM DESIGN">
-  <meta property="og:title" content="BM DESIGN Architecture and Interior Design">
-  <meta property="og:description" content="Designing your space…">
+  <title>BM DESIGN | Architecture & Interior Design</title>
+  <meta name="description" content="BM DESIGN is a modern architecture and interior design firm based in Ambur, Tamil Nadu. We specialize in creating timeless spaces that balance function and elegance.">
+  <meta property="og:title" content="BM DESIGN | Architecture & Interior Design">
   <meta property="og:image" content="images/og-preview.jpg">
   <meta property="og:url" content="https://bmdesign.vercel.app">
   <meta name="theme-color" content="#000000">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Enhanced Logo Styling */
+    .navbar-brand {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #00bfff !important;
+      text-transform: uppercase;
+      position: relative;
+    }
+
+    .navbar-brand::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #00bfff, #0077b6);
+      border-radius: 2px;
+      animation: glowline 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowline {
+      from { box-shadow: 0 0 5px #00bfff; }
+      to { box-shadow: 0 0 15px #00bfff; }
+    }
+
+    .hero {
+      background: url('images/sample1.jpg') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      animation: fadein 2s ease;
+    }
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #00bfff;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #ddd;
+    }
+
+    .btn-modern {
+      border: 1px solid #00bfff;
+      color: #00bfff;
+      transition: all 0.3s ease;
+    }
+
+    .btn-modern:hover {
+      background: #00bfff;
+      color: #fff;
+      box-shadow: 0 0 10px #00bfff;
+    }
+  </style>
 </head>
+
 <body>
 
 <!-- Preloader -->
@@ -30,7 +113,7 @@
 <!-- Navbar -->
 <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">BM DESIGN</a>
+    <a class="navbar-brand fs-4" href="index.html">BM DESIGN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,21 +131,21 @@
   </div>
 </header>
 
-<!-- Hero -->
-<section class="hero d-flex align-items-center justify-content-center text-center text-light">
-  <div>
-    <h1 class="display-4 fw-bold">Creating Spaces That Inspire</h1>
-    <p class="lead">Architecture, Construction & Interior Design in Ambur</p>
-    <a href="contact.html" class="btn btn-outline-light mt-3">Get in Touch</a>
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Design. Build. Inspire.</h1>
+    <p>We create spaces that define modern architecture and elegant interiors.</p>
+    <a href="contact.html" class="btn btn-modern mt-3">Get in Touch</a>
   </div>
 </section>
 
-<!-- Vision -->
-<section class="py-5 fade-section">
-  <div class="container text-center">
-    <h2 class="fw-bold mb-4">Our Vision</h2>
-    <p>We deliver innovative, sustainable, and elegant design solutions that balance functionality and beauty.</p>
-    <img src="images/sample1.jpg" class="img-fluid rounded shadow mt-3" alt="architecture">
+<!-- About Preview -->
+<section class="py-5 text-center bg-dark text-light fade-section">
+  <div class="container">
+    <h2 class="fw-bold mb-3">About BM DESIGN</h2>
+    <p>Based in Ambur, BM DESIGN delivers innovative architectural and interior solutions that bring creativity and functionality together. Our designs speak simplicity, sustainability, and elegance.</p>
+    <a href="about.html" class="btn btn-modern mt-3">Learn More</a>
   </div>
 </section>
 
@@ -71,7 +154,7 @@
   <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
 </footer>
 
-<!-- Scroll to top -->
+<!-- Scroll Button -->
 <div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
 
 <!-- WhatsApp -->
