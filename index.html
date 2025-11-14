@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BM DESIGN | Architecture & Interior Design</title>
-  <meta name="description" content="BM DESIGN — modern architecture and interior design firm based in Ambur, Tamil Nadu. Creating timeless spaces through design and innovation." />
+  <meta name="description" content="BM DESIGN — modern architecture and interior design firm in Ambur, Tamil Nadu. Creating timeless spaces through creativity and precision." />
   <meta name="theme-color" content="#000000" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
 
   <style>
     body {
@@ -70,83 +69,48 @@
       }
     }
 
-    /* Hero Slideshow */
+    /* Hero Section */
     .hero {
-      position: relative;
       height: 100vh;
+      background: linear-gradient(160deg, #0a0a0a 0%, #111 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
       overflow: hidden;
     }
 
-    .hero-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      animation: fadeSlide 24s infinite;
-    }
-
-    .hero-slide:nth-child(1) {
-      background-image: url("images/sample1.jpg");
-      animation-delay: 0s;
-    }
-    .hero-slide:nth-child(2) {
-      background-image: url("images/sample2.jpg");
-      animation-delay: 8s;
-    }
-    .hero-slide:nth-child(3) {
-      background-image: url("images/sample3.jpg");
-      animation-delay: 16s;
-    }
-
-    @keyframes fadeSlide {
-      0%, 30% { opacity: 1; }
-      33%, 100% { opacity: 0; }
-    }
-
-    /* Overlay */
-    .hero::after {
+    .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
+      background: radial-gradient(circle at top left, rgba(0,191,255,0.2), transparent 60%),
+                  radial-gradient(circle at bottom right, rgba(0,191,255,0.2), transparent 60%);
     }
 
-    /* Hero Content */
     .hero-content {
       position: relative;
       z-index: 2;
-      text-align: center;
-      top: 50%;
-      transform: translateY(-50%);
       animation: fadein 2s ease;
     }
 
     @keyframes fadein {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-content h1 {
       font-size: 3rem;
       font-weight: 700;
       color: #00bfff;
+      margin-bottom: 10px;
     }
 
     .hero-content p {
       font-size: 1.1rem;
-      color: #ddd;
-      margin-bottom: 25px;
+      color: #ccc;
+      margin-bottom: 20px;
     }
 
     .btn-modern {
@@ -161,6 +125,7 @@
       box-shadow: 0 0 10px #00bfff;
     }
 
+    /* Footer */
     footer {
       background: #000;
       color: #aaa;
@@ -207,14 +172,6 @@
 </head>
 
 <body>
-  <!-- Preloader -->
-  <div id="preloader">
-    <div class="preloader-content">
-      <div class="logo-glow">BM DESIGN</div>
-      <p>Designing your space…</p>
-    </div>
-  </div>
-
   <!-- Navbar -->
   <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm py-3">
     <div class="container">
@@ -238,10 +195,6 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-    <div class="hero-slide"></div>
-
     <div class="hero-content">
       <h1>Design. Build. Inspire.</h1>
       <p>Where architecture meets creativity and innovation.</p>
@@ -253,7 +206,7 @@
   <section class="py-5 text-center bg-dark text-light">
     <div class="container">
       <h2 class="fw-bold mb-3">About BM DESIGN</h2>
-      <p>BM DESIGN crafts timeless architectural and interior design solutions. Based in Ambur, we blend modern aesthetics with functional excellence to bring your dream spaces to life.</p>
+      <p>BM DESIGN creates architectural and interior design solutions that blend functionality with timeless aesthetics. Based in Ambur, we bring your dream spaces to life.</p>
       <a href="about.html" class="btn btn-modern mt-3">Learn More</a>
     </div>
   </section>
