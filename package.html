@@ -4,6 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Packages | BM DESIGN Architecture and Interior Design</title>
+  <meta name="description" content="BM DESIGN offers affordable architecture, construction, and interior design packages in Ambur, Tamil Nadu.">
+  <meta name="keywords" content="architecture packages, interior design packages, building design, Ambur, BM DESIGN">
+  <meta property="og:title" content="BM DESIGN Architecture and Interior Design Packages">
+  <meta property="og:description" content="Choose from Basic, Standard, Premium, and Ultra Premium design packages.">
+  <meta property="og:image" content="images/og-preview.jpg">
+  <meta property="og:url" content="https://bmdesign.vercel.app">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,6 +19,15 @@
 </head>
 <body>
 
+<!-- Preloader -->
+<div id="preloader">
+  <div class="preloader-content">
+    <div class="logo-glow">BM DESIGN</div>
+    <p>Designing your space…</p>
+  </div>
+</div>
+
+<!-- Navbar -->
 <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold fs-4" href="index.html">BM DESIGN</a>
@@ -31,6 +48,7 @@
   </div>
 </header>
 
+<!-- Header -->
 <section class="py-5 text-center bg-secondary text-white mt-5">
   <div class="container">
     <h1 class="fw-bold">Design Packages</h1>
@@ -38,31 +56,56 @@
   </div>
 </section>
 
-<section class="py-5">
-  <div class="container">
-    <div class="table-responsive">
-      <table class="table table-bordered text-center">
-        <thead class="table-dark">
-          <tr><th>Package</th><th>Price / Sq.Ft</th><th>Details</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Basic</td><td>₹30</td><td>Concept Design</td></tr>
-          <tr><td>Classic</td><td>₹50</td><td>Concept Design + Working Drawings</td></tr>
-          <tr><td>Premium</td><td>₹80</td><td>Design + Working Drawings + 3D View</td></tr>
-          <tr><td>Luxury</td><td>₹120</td><td>All Services + Site Visit + Interior Suggestions</td></tr>
-          <tr><td>Ultimate</td><td>₹150</td><td>Full Architectural & Interior Service + Material Selection</td></tr>
-        </tbody>
-      </table>
-    </div>
+<!-- Packages Table -->
+<section class="py-5 bg-dark text-light">
+  <div class="container table-responsive">
+    <table class="table table-dark table-bordered align-middle text-center">
+      <thead class="table-light text-dark">
+        <tr>
+          <th>Specification</th>
+          <th>Basic<br><small>₹30 / sq.ft</small></th>
+          <th>Standard<br><small>₹70 / sq.ft</small></th>
+          <th>Premium<br><small>₹100 / sq.ft</small></th>
+          <th>Ultra Premium<br><small>₹170 / sq.ft</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Floor Plan</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Elevations</td><td>–</td><td>✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Working Drawings</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
+        <tr><td>3D Front View</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Electrical Plan</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Plumbing Plan</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Structural Plan</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+        <tr><td>Interior 3D Views</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+        <tr><td>Material Suggestions</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+        <tr><td>Consultation & Site Visit</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+      </tbody>
+      <tfoot class="table-secondary text-dark">
+        <tr>
+          <td></td>
+          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
+          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
+          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
+          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
+        </tr>
+      </tfoot>
+    </table>
   </div>
 </section>
 
+<!-- Footer -->
 <footer class="bg-dark text-white text-center py-4">
   <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
 </footer>
 
+<!-- Scroll to top -->
 <div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
-<a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/script.js"></script>
