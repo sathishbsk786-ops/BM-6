@@ -1,106 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packages | BM DESIGN Architecture and Interior Design</title>
-  <meta name="description" content="BM DESIGN offers affordable architecture, construction, and interior design packages in Ambur, Tamil Nadu.">
-  <meta name="keywords" content="architecture packages, interior design packages, building design, Ambur, BM DESIGN">
-  <meta property="og:title" content="BM DESIGN Architecture and Interior Design Packages">
-  <meta property="og:description" content="Choose from Basic, Standard, Premium, and Ultra Premium design packages.">
-  <meta property="og:image" content="images/og-preview.jpg">
-  <meta property="og:url" content="https://bmdesign.vercel.app">
-  <meta name="theme-color" content="#000000">
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Explore BM DESIGN's architecture and interior design packages. Tailored design solutions for every project.">
+  <meta name="theme-color" content="#111111" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
   <style>
-    /* Premium hover and fade effects */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f0f;
+      color: #e5e5e5;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #121212 !important;
+    }
+
+    .navbar-brand {
+      font-family: "Cinzel Decorative", serif;
+      font-size: 2rem;
+      color: #9fc9df !important;
+      letter-spacing: 1.5px;
+      position: relative;
+    }
+
+    .navbar-brand::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #9fc9df, #4e6e81);
+      opacity: 0.8;
+      border-radius: 2px;
+    }
+
+    .nav-link {
+      color: #ccc !important;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: #9fc9df !important;
+    }
+
+    /* Header Section */
+    section.header {
+      background: linear-gradient(180deg, #141414, #181818);
+      padding: 6rem 1rem 3rem;
+      text-align: center;
+      color: #d9d9d9;
+    }
+
+    section.header h1 {
+      font-family: "Cinzel Decorative", serif;
+      font-size: 2.2rem;
+      color: #9fc9df;
+      margin-bottom: 8px;
+    }
+
+    section.header p {
+      color: #aaa;
+      font-size: 1rem;
+    }
+
+    /* Package Table */
     .package-table {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 1.2s ease;
+      margin-top: 3rem;
+      border-radius: 10px;
+      overflow: hidden;
+      background: #131313;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      animation: fadein 1.3s ease;
     }
-    .package-table.visible {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes fadein {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    table.table-dark th, table.table-dark td {
-      vertical-align: middle;
-      border-color: rgba(255,255,255,0.1);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
     }
-    table.table-dark tbody tr:hover {
-      background: rgba(0,191,255,0.1);
-      box-shadow: inset 0 0 10px rgba(0,191,255,0.4);
-    }
+
     thead th {
-      background: linear-gradient(90deg, #00bfff, #0077b6) !important;
-      color: #fff !important;
+      background: #1a1a1a;
+      color: #c9d6df;
+      text-align: center;
+      font-weight: 600;
+      padding: 1rem;
+      border-bottom: 1px solid #2a2a2a;
     }
-    tfoot td a.btn {
-      transition: all 0.3s ease;
+
+    tbody td {
+      text-align: center;
+      padding: 0.9rem;
+      border-bottom: 1px solid #1f1f1f;
+      color: #bfbfbf;
+      transition: background 0.3s ease;
     }
-    tfoot td a.btn:hover {
-      background: #00bfff !important;
-      border-color: #00bfff !important;
-      color: #fff !important;
-      box-shadow: 0 0 8px #00bfff;
+
+    tbody td:first-child {
+      text-align: left;
+      padding-left: 1rem;
+      color: #e5e5e5;
+      font-weight: 500;
+    }
+
+    tbody tr:hover {
+      background: rgba(159, 201, 223, 0.08);
+    }
+
+    tfoot td {
+      background: #181818;
+      padding: 1rem;
+    }
+
+    tfoot a {
+      border: 1px solid #9fc9df;
+      color: #9fc9df;
+      padding: 6px 14px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    tfoot a:hover {
+      background: #9fc9df;
+      color: #111;
+      box-shadow: 0 0 10px rgba(159, 201, 223, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: #0c0c0c;
+      color: #888;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 14px;
+      margin-top: 4rem;
     }
   </style>
 </head>
+
 <body>
-
-<!-- Preloader -->
-<div id="preloader">
-  <div class="preloader-content">
-    <div class="logo-glow">BM DESIGN</div>
-    <p>Designing your space…</p>
-  </div>
-</div>
-
-<!-- Navbar -->
-<header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
-  <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">BM DESIGN</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link active" href="package.html">Packages</a></li>
-        <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
-        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+  <!-- Navbar -->
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">BM DESIGN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="package.html">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<!-- Header -->
-<section class="py-5 text-center bg-secondary text-white mt-5">
-  <div class="container">
-    <h1 class="fw-bold">Design Packages</h1>
-    <p>Choose the right plan for your dream project.</p>
-  </div>
-</section>
+  <!-- Header Section -->
+  <section class="header">
+    <div class="container">
+      <h1>Design Packages</h1>
+      <p>Explore tailored architectural and interior design solutions crafted for your project.</p>
+    </div>
+  </section>
 
-<!-- Packages Table -->
-<section class="py-5 bg-dark text-light">
-  <div class="container table-responsive package-table">
-    <table class="table table-dark table-bordered align-middle text-center">
+  <!-- Packages Table -->
+  <section class="container package-table">
+    <table>
       <thead>
         <tr>
           <th>Specification</th>
-          <th>Basic<br><small>₹30 / sq.ft</small></th>
-          <th>Standard<br><small>₹70 / sq.ft</small></th>
-          <th>Premium<br><small>₹100 / sq.ft</small></th>
-          <th>Ultra Premium<br><small>₹170 / sq.ft</small></th>
+          <th>Basic</th>
+          <th>Standard</th>
+          <th>Premium</th>
+          <th>Ultra Premium</th>
         </tr>
       </thead>
       <tbody>
@@ -115,43 +208,23 @@
         <tr><td>Material Suggestions</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
         <tr><td>Consultation & Site Visit</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
       </tbody>
-      <tfoot class="table-secondary text-dark">
+      <tfoot>
         <tr>
           <td></td>
-          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
-          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
-          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
-          <td><a href="contact.html" class="btn btn-outline-dark btn-sm">Select Package</a></td>
+          <td><a href="contact.html">Select</a></td>
+          <td><a href="contact.html">Select</a></td>
+          <td><a href="contact.html">Select</a></td>
+          <td><a href="contact.html">Select</a></td>
         </tr>
       </tfoot>
     </table>
-  </div>
-</section>
+  </section>
 
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4">
-  <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    © 2025 BM DESIGN. All Rights Reserved.
+  </footer>
 
-<!-- Scroll to top -->
-<div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
-<script>
-  // Reveal effect when visible
-  const table = document.querySelector('.package-table');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) e.target.classList.add('visible');
-    });
-  }, { threshold: 0.2 });
-  observer.observe(table);
-</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
