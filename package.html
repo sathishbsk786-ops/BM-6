@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Packages | BM DESIGN</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,34 +16,39 @@
       overflow-x: hidden;
     }
 
-    /* Navbar */
+    /* NAVBAR */
     .navbar {
       background: #111 !important;
     }
     .navbar-brand {
       font-family: "Cinzel Decorative", serif;
-      color: #9fc9df !important;
+      color: #fff !important;
       font-size: 2rem;
+      letter-spacing: 1px;
     }
 
-    /* Header */
+    /* HEADER */
     .page-header {
       text-align: center;
       padding: 90px 20px 50px;
-      color: #9fc9df;
+      color: #fff;
     }
     .page-header h1 {
       font-size: 2.4rem;
       margin-bottom: 10px;
     }
+    .page-header p {
+      color: #d0d0d0;
+      font-size: 1rem;
+    }
 
-    /* TABLE */
+    /* TABLE WRAPPER */
     .package-table {
       width: 100%;
       background: #161616;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid #1f1f1f;
+      border: 1px solid #222;
     }
 
     table {
@@ -56,9 +62,15 @@
       background: #1a1a1a;
       padding: 16px;
       text-align: center;
-      color: #9fc9df;
+      color: #fff;
       font-weight: 600;
       border: 1px solid #2a2a2a;
+    }
+
+    /* GOLD TEXT */
+    .gold-text {
+      color: #d4af37 !important;
+      font-weight: 700;
     }
 
     tbody td {
@@ -80,40 +92,31 @@
       background: #1c1c1c;
     }
 
-    /* Blue Highlight Column */
-    .highlight {
-      border-left: 2px solid #63b3ff;
-      border-right: 2px solid #63b3ff;
-      background: rgba(99, 179, 255, 0.06) !important;
-    }
-
-    /* Select Buttons */
+    /* SELECT BUTTON */
     tfoot td {
       text-align: center !important;
       padding: 20px;
       background: #151515;
       border: 1px solid #242424;
     }
-
     .select-btn {
-      border: 1px solid #9fc9df;
+      border: 1px solid #fff;
       padding: 6px 14px;
-      color: #9fc9df;
+      color: #fff;
       text-decoration: none;
       border-radius: 4px;
       transition: 0.3s;
       font-size: 0.9rem;
     }
-
     .select-btn:hover {
-      background: #9fc9df;
+      background: #fff;
       color: #111;
     }
 
     footer {
-      text-align: center;
-      background: #0c0c0c;
+      background: #000;
       color: #777;
+      text-align: center;
       padding: 25px;
       margin-top: 50px;
     }
@@ -147,7 +150,7 @@
 <!-- HEADER -->
 <section class="page-header">
   <h1>Design Packages</h1>
-  <p>Select the perfect package for your architectural needs.</p>
+  <p>Choose the perfect package for your architectural needs.</p>
 </section>
 
 <!-- PACKAGE TABLE -->
@@ -159,35 +162,35 @@
         <tr>
           <th>Specification</th>
           <th>Basic</th>
-          <th class="highlight">Standard</th>
+          <th>Standard</th>
           <th>Premium</th>
-          <th>Ultra Premium</th>
+          <th class="gold-text">Ultra Premium</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr><td>Scheme Drawing: All Floors (2D)</td><td>✓</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Furniture Layout: All Floors (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Elevation Design (3D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Electrical Drawings (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Plumbing Drawing (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Working Drawing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Site Assessment & Site Plan</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Elevation Detail Drawing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Half Layout: All Floors (3D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Interior Views: All Rooms (3D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Interior Detailing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Material & Brand Selection</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Landscaping Architecture Designs</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Topographical Survey</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
-        <tr><td>Approval Drawing</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Scheme Drawing: All Floors (2D)</td><td>✓</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Furniture Layout: All Floors (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Elevation Design (3D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Electrical Drawings (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Plumbing Drawing (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Working Drawing (2D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Site Assessment & Site Plan</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Elevation Detail Drawing (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Half Layout: All Floors (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Interior Views: All Rooms (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+        <tr><td>Interior Detailing (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Material & Brand Selection</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Landscaping Architecture Designs</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Topographical Survey</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+        <tr><td>Approval Drawing</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
       </tbody>
 
       <tfoot>
         <tr>
           <td></td>
           <td><a class="select-btn" href="contact.html">Select</a></td>
-          <td class="highlight"><a class="select-btn" href="contact.html">Select</a></td>
+          <td><a class="select-btn" href="contact.html">Select</a></td>
           <td><a class="select-btn" href="contact.html">Select</a></td>
           <td><a class="select-btn" href="contact.html">Select</a></td>
         </tr>
