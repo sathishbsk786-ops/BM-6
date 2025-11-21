@@ -10,47 +10,56 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: #111;
+      background: #0f0f0f;
       color: #eee;
+      overflow-x: hidden;
     }
 
+    /* Navbar */
     .navbar {
-      background: #0d0d0d !important;
+      background: #111 !important;
     }
-
     .navbar-brand {
       font-family: "Cinzel Decorative", serif;
-      font-size: 2rem;
       color: #9fc9df !important;
+      font-size: 2rem;
+      letter-spacing: 1px;
     }
 
     /* Header */
     .page-header {
       text-align: center;
-      padding: 70px 0 40px;
+      padding: 90px 20px 50px;
       color: #9fc9df;
     }
     .page-header h1 {
-      font-size: 2.3rem;
+      font-size: 2.4rem;
       margin-bottom: 10px;
     }
     .page-header p {
-      font-size: 1rem;
       color: #ccc;
+      font-size: 1rem;
     }
 
     /* TABLE */
+    .package-table {
+      width: 100%;
+      background: #161616;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #1f1f1f;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
-      background: #181818;
-      color: #ddd;
       font-size: 0.95rem;
+      color: #eee;
     }
 
     thead th {
-      background: #1f1f1f;
-      padding: 15px;
+      background: #1a1a1a;
+      padding: 16px;
       text-align: center;
       color: #9fc9df;
       font-weight: 600;
@@ -59,27 +68,31 @@
 
     tbody td {
       padding: 12px;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #242424;
       text-align: center;
+      background: #131313;
     }
 
     tbody td:first-child {
       text-align: left;
-      padding-left: 20px;
+      padding-left: 25px;
       color: #fff;
       font-weight: 500;
+      background: #151515;
     }
 
-    tbody tr:hover {
-      background: rgba(159, 201, 223, 0.08);
+    tbody tr:hover td {
+      background: #1c1c1c;
     }
 
-    tfoot td {
-      padding: 15px;
-      background: #1a1a1a;
-      border: 1px solid #2a2a2a;
+    /* Blue Highlight Column */
+    .highlight {
+      border-left: 2px solid #63b3ff;
+      border-right: 2px solid #63b3ff;
+      background: rgba(99, 179, 255, 0.06) !important;
     }
 
+    /* Select Buttons */
     .select-btn {
       border: 1px solid #9fc9df;
       padding: 6px 14px;
@@ -87,7 +100,9 @@
       text-decoration: none;
       border-radius: 4px;
       transition: 0.3s;
+      font-size: 0.9rem;
     }
+
     .select-btn:hover {
       background: #9fc9df;
       color: #111;
@@ -95,84 +110,94 @@
 
     footer {
       text-align: center;
+      background: #0c0c0c;
       color: #777;
       padding: 25px;
       margin-top: 50px;
-      background: #0d0d0d;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">BM DESIGN</a>
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">BM DESIGN</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navmenu">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="package.html">Packages</a></li>
-          <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="package.html">Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HEADER -->
-  <section class="page-header">
-    <h1>Our Design Packages</h1>
-    <p>Choose the ideal package that fits your project.</p>
-  </section>
+<!-- HEADER -->
+<section class="page-header">
+  <h1>Design Packages</h1>
+  <p>Select the perfect package for your architectural needs.</p>
+</section>
 
-  <!-- TABLE SECTION -->
-  <div class="container mb-5">
+<!-- PACKAGE TABLE -->
+<div class="container mb-5">
+  <div class="package-table">
+
     <table>
       <thead>
         <tr>
-          <th>SPECIFICATION</th>
+          <th>Specification</th>
           <th>Basic</th>
-          <th>Standard</th>
+          <th class="highlight">Standard</th>
           <th>Premium</th>
           <th>Ultra Premium</th>
         </tr>
       </thead>
 
       <tbody>
-        <tr><td>Floor Plan</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>2D Drawings</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>3D Elevation</td><td>–</td><td>✓</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Working Drawing</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Electrical Plan</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Plumbing Drawing</td><td>–</td><td>–</td><td>✓</td><td>✓</td></tr>
-        <tr><td>Structural Drawing</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
-        <tr><td>Interior 3D</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
-        <tr><td>Material Suggestions</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
-        <tr><td>Site Visits</td><td>–</td><td>–</td><td>–</td><td>✓</td></tr>
+        <tr><td>Scheme Drawing: All Floors (2D)</td><td>✓</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Furniture Layout: All Floors (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Elevation Design (3D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Electrical Drawings (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Plumbing Drawing (2D)</td><td>✕</td><td class="highlight">✓</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Working Drawing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Site Assessment & Site Plan</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Elevation Detail Drawing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Half Layout: All Floors (3D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Interior Views: All Rooms (3D)</td><td>✕</td><td class="highlight">✕</td><td>✓</td><td>✓</td></tr>
+        <tr><td>Interior Detailing (2D)</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Material & Brand Selection</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Landscaping Architecture Designs</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Topographical Survey</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Approval Drawing</td><td>✕</td><td class="highlight">✕</td><td>✕</td><td>✓</td></tr>
+        <tr><td>Office Visits</td><td>✕</td><td class="highlight">✕</td><td>Max 4</td><td>Max 8</td></tr>
       </tbody>
 
       <tfoot>
         <tr>
           <td></td>
-          <td><a href="contact.html" class="select-btn">Select</a></td>
-          <td><a href="contact.html" class="select-btn">Select</a></td>
-          <td><a href="contact.html" class="select-btn">Select</a></td>
-          <td><a href="contact.html" class="select-btn">Select</a></td>
+          <td><a class="select-btn" href="contact.html">Select</a></td>
+          <td class="highlight"><a class="select-btn" href="contact.html">Select</a></td>
+          <td><a class="select-btn" href="contact.html">Select</a></td>
+          <td><a class="select-btn" href="contact.html">Select</a></td>
         </tr>
       </tfoot>
+
     </table>
+
   </div>
+</div>
 
-  <footer>© 2025 BM DESIGN. All Rights Reserved.</footer>
+<footer>© 2025 BM DESIGN. All Rights Reserved.</footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
