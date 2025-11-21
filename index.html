@@ -1,237 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BM DESIGN | Architecture & Interior Design</title>
-  <meta name="description" content="BM DESIGN — modern architecture and interior design firm in Ambur, Tamil Nadu. Creating timeless spaces through creativity and precision." />
-  <meta name="theme-color" content="#000000" />
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BM DESIGNS – Architecture & Interior</title>
 
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     body {
-      font-family: "Poppins", sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+        background: #000;
+        color: white;
     }
 
-    /* Navbar Brand */
-    .navbar-brand {
-      font-family: "Cinzel Decorative", serif;
-      font-size: 2.2rem;
-      letter-spacing: 2px;
-      color: #00bfff !important;
-      text-transform: uppercase;
-      opacity: 0;
-      transform: translateY(-10px);
-      animation: fadeSlideIn 2s ease forwards;
-      position: relative;
-    }
-
-    .navbar-brand::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #00bfff, #0077b6);
-      border-radius: 2px;
-      opacity: 0;
-      animation: lineFade 2s ease forwards 0.8s;
-    }
-
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateY(-15px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes lineFade {
-      from {
-        width: 0;
-        opacity: 0;
-      }
-      to {
+    /* HERO SLIDER */
+    .hero-container {
         width: 100%;
-        opacity: 1;
-      }
+        height: 95vh;
+        overflow: hidden;
+        position: relative;
     }
 
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      background: linear-gradient(160deg, #0a0a0a 0%, #111 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .slider {
+        display: flex;
+        width: 500%;
+        height: 100%;
+        animation: slide 25s infinite;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top left, rgba(0,191,255,0.2), transparent 60%),
-                  radial-gradient(circle at bottom right, rgba(0,191,255,0.2), transparent 60%);
+    .slide {
+        width: 100%;
+        height: 100%;
+        flex-shrink: 0;
+        background-size: cover;
+        background-position: center;
+        position: relative;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      animation: fadein 2s ease;
+    /* HERO OVERLAY TEXT */
+    .hero-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 90%;
     }
 
-    @keyframes fadein {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .hero-text h1 {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 15px;
     }
 
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 700;
-      color: #00bfff;
-      margin-bottom: 10px;
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+        opacity: 0.9;
     }
 
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #ccc;
-      margin-bottom: 20px;
+    .hero-text a {
+        padding: 10px 26px;
+        background: transparent;
+        border: 2px solid white;
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        border-radius: 4px;
     }
 
-    .btn-modern {
-      border: 1px solid #00bfff;
-      color: #00bfff;
-      transition: all 0.3s ease;
+    /* SLIDE ANIMATION */
+    @keyframes slide {
+        0%   { transform: translateX(0%); }
+        20%  { transform: translateX(-100%); }
+        40%  { transform: translateX(-200%); }
+        60%  { transform: translateX(-300%); }
+        80%  { transform: translateX(-400%); }
+        100% { transform: translateX(0%); }
     }
 
-    .btn-modern:hover {
-      background: #00bfff;
-      color: #fff;
-      box-shadow: 0 0 10px #00bfff;
+    /* SECTION TITLES */
+    .section {
+        padding: 70px 10%;
+        background: #000;
+        color: white;
+        text-align: center;
     }
 
-    /* Footer */
+    .section h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .section p {
+        max-width: 800px;
+        margin: auto;
+        opacity: 0.85;
+        margin-bottom: 40px;
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+    }
+
+    .service-box {
+        background: #111;
+        padding: 20px;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .service-box img {
+        width: 100%;
+        border-radius: 6px;
+        margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    /* WHY CHOOSE US */
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    .why-box {
+        background: #111;
+        padding: 25px;
+        border-radius: 8px;
+    }
+
+    .why-box img {
+        width: 60px;
+        margin-bottom: 15px;
+    }
+
+    .why-box h4 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    /* ABOUT */
+    .about-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        align-items: center;
+        text-align: left;
+    }
+
+    .about-grid img {
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    /* CONTACT BANNER */
+    .contact-banner {
+        padding: 50px 10%;
+        background: #111;
+        text-align: center;
+    }
+
+    .contact-banner h2 {
+        margin-bottom: 10px;
+        font-size: 1.8rem;
+    }
+
+    .contact-banner a {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 26px;
+        border: 2px solid white;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+    }
+
+    /* FOOTER */
     footer {
-      background: #000;
-      color: #aaa;
-      font-size: 14px;
+        background: #000;
+        text-align: center;
+        padding: 30px;
+        font-size: 0.9rem;
+        opacity: 0.7;
     }
+</style>
 
-    /* WhatsApp & Scroll Buttons */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 25px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
-      transition: 0.3s ease;
-      z-index: 999;
-    }
-    .whatsapp-float:hover {
-      background: #1ebc5c;
-      transform: scale(1.05);
-    }
-
-    #scrollTop {
-      position: fixed;
-      bottom: 90px;
-      right: 25px;
-      background: #00bfff;
-      color: #fff;
-      padding: 10px 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 16px;
-      display: none;
-      z-index: 999;
-    }
-  </style>
 </head>
-
 <body>
-  <!-- Navbar -->
-  <header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm py-3">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="index.html">BM DESIGN</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
-          <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
-          <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+
+<!-- HERO SECTION -->
+<div class="hero-container">
+    <div class="slider">
+        <div class="slide" style="background-image: url('360_F_1578582206_bDbsKRzlUGXsHZ8QfcUlzfnx4JGiZHUA.jpg');"></div>
+        <div class="slide" style="background-image: url('architectural-3d-rendering.jpg');"></div>
+        <div class="slide" style="background-image: url('Architectural-Site-Analysis-Diagram-Legal-Restrictions-03.jpg.webp');"></div>
+        <div class="slide" style="background-image: url('pexels-pixabay-262367.jpg');"></div>
+        <div class="slide" style="background-image: url('house-rendering-interior-wallpaper-preview.jpg');"></div>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Design. Build. Inspire.</h1>
-      <p>Where architecture meets creativity and innovation.</p>
-      <a href="contact.html" class="btn btn-modern">Start Your Project</a>
+    <div class="hero-text">
+        <h1>YOUR CONSTRUCTION & INTERIOR<br>DESIGN EXPERTS</h1>
+        <p>Modern architectural solutions designed with precision, creativity, and excellence.</p>
+        <a href="about.html">Explore</a>
     </div>
-  </section>
+</div>
 
-  <!-- About Section -->
-  <section class="py-5 text-center bg-dark text-light">
-    <div class="container">
-      <h2 class="fw-bold mb-3">About BM DESIGN</h2>
-      <p>BM DESIGN creates architectural and interior design solutions that blend functionality with timeless aesthetics. Based in Ambur, we bring your dream spaces to life.</p>
-      <a href="about.html" class="btn btn-modern mt-3">Learn More</a>
+<!-- SERVICES -->
+<section class="section">
+    <h2>OUR SERVICES</h2>
+    <p>Crafted with innovation, precision, and a deep understanding of architectural excellence.</p>
+
+    <div class="services-grid">
+        <div class="service-box">
+            <img src="architectural-3d-rendering.jpg">
+            <h3>Custom Layouts</h3>
+            <p>Designed to suit your lifestyle and functional needs.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="house-rendering-interior-wallpaper-preview.jpg">
+            <h3>Efficient Planning</h3>
+            <p>Optimizing every inch of your space for comfort.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="pexels-pixabay-262367.jpg">
+            <h3>Natural Lighting</h3>
+            <p>Bringing balance, comfort, and openness to your home.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <!-- Footer -->
-  <footer class="text-center py-4">
-    <p>© 2025 BM DESIGN. All Rights Reserved.</p>
-  </footer>
+<!-- WHY CHOOSE US -->
+<section class="section">
+    <h2>WHY CHOOSE US</h2>
 
-  <!-- Scroll & WhatsApp -->
-  <div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
-  <a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+    <div class="why-grid">
+        <div class="why-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
+            <h4>Expert Craftsmanship</h4>
+            <p>Top-quality precision work from experienced architects.</p>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Scroll-to-top logic
-    const scrollBtn = document.getElementById("scrollTop");
-    window.addEventListener("scroll", () => {
-      scrollBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-    scrollBtn.addEventListener("click", () =>
-      window.scrollTo({ top: 0, behavior: "smooth" })
-    );
-  </script>
+        <div class="why-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995528.png">
+            <h4>Premium Materials</h4>
+            <p>Only the finest materials for long-lasting durability.</p>
+        </div>
+
+        <div class="why-box">
+            <img src="https://cdn-icons-png.flaticon.com/512/2541/2541991.png">
+            <h4>Attention to Detail</h4>
+            <p>Every detail is thoughtfully designed.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+    <h2>ABOUT COMPANY</h2>
+
+    <div class="about-grid">
+        <img src="architectural-3d-rendering.jpg">
+
+        <div>
+            <h3>Building Excellence</h3>
+            <p>BM Designs brings modern architectural design to life with precision, innovation, and creativity.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-banner">
+    <h2>READY TO START YOUR PROJECT?</h2>
+    <p>Let’s bring your dream space to life.</p>
+    <a href="contact.html">CONTACT US</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 BM DESIGNS. All Rights Reserved.
+</footer>
+
 </body>
 </html>
