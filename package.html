@@ -11,60 +11,66 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: #0f0f0f;
-      color: #eee;
+      background: #ffffff;
+      color: #111;
       overflow-x: hidden;
     }
 
     /* NAVBAR */
     .navbar {
-      background: #111 !important;
+      background: #fff !important;
+      border-bottom: 1px solid #ddd;
     }
     .navbar-brand {
       font-family: "Cinzel Decorative", serif;
-      color: #fff !important;
+      color: #000 !important;
       font-size: 2rem;
       letter-spacing: 1px;
+    }
+    .nav-link {
+      color: #333 !important;
+      font-weight: 500;
     }
 
     /* HEADER */
     .page-header {
       text-align: center;
-      padding: 90px 20px 50px;
-      color: #fff;
+      padding: 90px 20px 40px;
+      color: #000;
     }
     .page-header h1 {
       font-size: 2.4rem;
       margin-bottom: 10px;
+      font-weight: 600;
     }
     .page-header p {
-      color: #d0d0d0;
+      color: #444;
       font-size: 1rem;
     }
 
     /* TABLE WRAPPER */
     .package-table {
       width: 100%;
-      background: #161616;
+      background: #fff;
       border-radius: 10px;
       overflow: hidden;
-      border: 1px solid #222;
+      border: 1px solid #e5e5e5;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 0.95rem;
-      color: #eee;
+      color: #111;
     }
 
     thead th {
-      background: #1a1a1a;
+      background: #fafafa;
       padding: 16px;
       text-align: center;
-      color: #fff;
+      color: #000;
       font-weight: 600;
-      border: 1px solid #2a2a2a;
+      border: 1px solid #e5e5e5;
     }
 
     /* GOLD TEXT */
@@ -73,52 +79,60 @@
       font-weight: 700;
     }
 
+    /* Alternating rows */
+    tbody tr:nth-child(odd) td {
+      background: #ffffff;
+    }
+    tbody tr:nth-child(even) td {
+      background: #f5f5f5;
+    }
+
     tbody td {
       padding: 12px;
-      border: 1px solid #242424;
+      border: 1px solid #e5e5e5;
       text-align: center;
-      background: #131313;
+      color: #111;
     }
 
     tbody td:first-child {
       text-align: left;
       padding-left: 25px;
-      color: #fff;
       font-weight: 500;
-      background: #151515;
     }
 
     tbody tr:hover td {
-      background: #1c1c1c;
+      background: #eee;
     }
 
     /* SELECT BUTTON */
     tfoot td {
       text-align: center !important;
       padding: 20px;
-      background: #151515;
-      border: 1px solid #242424;
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
     }
+
     .select-btn {
-      border: 1px solid #fff;
+      border: 1px solid #111;
       padding: 6px 14px;
-      color: #fff;
+      color: #111;
       text-decoration: none;
       border-radius: 4px;
       transition: 0.3s;
       font-size: 0.9rem;
     }
     .select-btn:hover {
-      background: #fff;
-      color: #111;
+      background: #111;
+      color: #fff;
     }
 
     footer {
-      background: #000;
+      background: #fff;
       color: #777;
       text-align: center;
       padding: 25px;
       margin-top: 50px;
+      border-top: 1px solid #ddd;
     }
   </style>
 </head>
@@ -126,7 +140,7 @@
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">BM DESIGN</a>
     <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -150,7 +164,7 @@
 <!-- HEADER -->
 <section class="page-header">
   <h1>Design Packages</h1>
-  <p>Choose the perfect package for your architectural needs.</p>
+  <p>Select the perfect package for your architectural requirements.</p>
 </section>
 
 <!-- PACKAGE TABLE -->
