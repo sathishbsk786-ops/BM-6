@@ -25,6 +25,7 @@
         background: #ffffff !important;
         box-shadow: 0 2px 12px rgba(0,0,0,0.1);
         padding: 10px 0;
+        z-index: 999;
     }
 
     .navbar-brand img {
@@ -41,31 +42,54 @@
     .hero-container {
         width: 100%;
         height: 85vh;
-        max-height: 780px;
+        max-height: 700px;
         position: relative;
         overflow: hidden;
+        margin-top: 75px; /* Fix overlap with navbar */
     }
 
-    .slider {
-        display: flex;
-        width: 300%;
-        height: 100%;
-        animation: slide 120s infinite linear;
-    }
-
-    .slide-img {
+    .hero-slides {
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
-        flex-shrink: 0;
+        position: relative;
     }
 
-    @keyframes slide {
-        0% { transform: translateX(0%); }
-        33% { transform: translateX(-100%); }
-        66% { transform: translateX(-200%); }
-        100% { transform: translateX(0%); }
+    .hero-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        /* Prevent stretching */
+        object-position: center;  /* Center image */
+        position: absolute;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .hero-img.active {
+        opacity: 1;
+    }
+
+    .hero-dots {
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+        text-align: center;
+        z-index: 10;
+    }
+
+    .hero-dots .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 5px;
+        display: inline-block;
+        background: #bbb;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .hero-dots .dot.active {
+        background: #333;
+        transform: scale(1.2);
     }
 
     .hero-text {
@@ -75,8 +99,9 @@
         transform: translate(-50%, -50%);
         text-align: center;
         width: 90%;
-        color: #111;
-        text-shadow: 0 2px 12px rgba(255,255,255,0.8);
+        color: #fff;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+        z-index: 5;
     }
 
     .hero-text h1 {
@@ -85,17 +110,17 @@
     }
 
     .hero-text p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        opacity: 0.95;
         margin-bottom: 20px;
-        opacity: 0.9;
     }
 
     .hero-text a {
         display: inline-block;
         padding: 10px 28px;
-        border: 2px solid #d9c7a3;
-        background: rgba(255, 255, 255, 0.7);
-        color: #000;
+        border: 2px solid #fff;
+        background: rgba(255,255,255,0.15);
+        color: #fff;
         text-decoration: none;
         border-radius: 5px;
         font-weight: 600;
@@ -103,7 +128,7 @@
     }
 
     .hero-text a:hover {
-        background: #d9c7a3;
+        background: #fff;
         color: #000;
     }
 
@@ -134,11 +159,12 @@
     }
 
     .service-box {
-        background: #f0ece6;
+        background: #fff;
         border-radius: 10px;
         border: 1px solid #d2d2d2;
         padding: 20px;
         text-align: left;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
     }
 
     .service-box img {
@@ -146,62 +172,6 @@
         border-radius: 8px;
         margin-bottom: 15px;
         object-fit: cover;
-    }
-
-    /* WHY CHOOSE US */
-    .why-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-    }
-
-    .why-box {
-        background: #f0ece6;
-        border-radius: 10px;
-        border: 1px solid #d2d2d2;
-        padding: 25px;
-    }
-
-    .why-box img {
-        width: 55px;
-        margin-bottom: 12px;
-    }
-
-    /* ABOUT SECTION */
-    .about-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
-        margin-top: 40px;
-        text-align: left;
-    }
-
-    .about-grid img {
-        width: 100%;
-        border-radius: 10px;
-        border: 2px solid #d9c7a3;
-        object-fit: cover;
-    }
-
-    /* CONTACT BANNER */
-    .contact-banner {
-        background: #eae6df;
-        border-top: 1px solid #d2d2d2;
-        border-bottom: 1px solid #d2d2d2;
-        padding: 60px 10%;
-        text-align: center;
-        margin-top: 60px;
-    }
-
-    .contact-banner a {
-        display: inline-block;
-        padding: 10px 26px;
-        border: 2px solid #000;
-        background: #fff;
-        color: #000;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
     }
 
     /* FOOTER */
@@ -220,7 +190,7 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="#">
             <img src="images/logo.png" alt="BM Designs Logo">
         </a>
 
@@ -230,110 +200,96 @@
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
-                <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
-                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Interior</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
             </ul>
         </div>
-
     </div>
 </nav>
 
-<!-- HERO SECTION (FIXED WITH 3 SLIDES + 120 SEC SPEED) -->
+<!-- HERO SECTION WITH DOTS -->
 <div class="hero-container">
-    <div class="slider">
-        <img src="images/slide2.jpg" class="slide-img">
-        <img src="images/slide4.jpg" class="slide-img">
-        <img src="images/slide5.jpg" class="slide-img">
+    <div class="hero-slides">
+        <img src="images/slide1.jpg" class="hero-img active">
+        <img src="images/slide2.jpg" class="hero-img">
+        <img src="images/slide5.jpg" class="hero-img">
     </div>
 
     <div class="hero-text">
         <h1>Transforming Vision Into Timeless Design</h1>
-        <p>Architecture and interiors crafted with precision, creativity, and excellence.</p>
-        <a href="about.html">Explore</a>
+        <p>Architecture & Interiors Crafted With Precision</p>
+        <a href="#">Explore</a>
+    </div>
+
+    <div class="hero-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
     </div>
 </div>
 
 <!-- SERVICES -->
 <section class="section">
     <h2>OUR SERVICES</h2>
-    <p>Crafted with innovation and precision to deliver timeless architecture.</p>
+    <p>We provide modern architecture, interior design, and complete project planning.</p>
 
     <div class="services-grid">
         <div class="service-box">
+            <img src="images/slide1.jpg">
+            <h3>Architectural Planning</h3>
+            <p>Precision-engineered building plans tailored to your vision.</p>
+        </div>
+
+        <div class="service-box">
             <img src="images/slide2.jpg">
-            <h3>Custom Layouts</h3>
-            <p>Designed to suit your lifestyle and functional needs.</p>
+            <h3>Interior Design</h3>
+            <p>Modern, elegant, and functional spaces crafted for comfort.</p>
         </div>
 
         <div class="service-box">
             <img src="images/slide5.jpg">
-            <h3>Efficient Planning</h3>
-            <p>Optimizing every inch of your space for comfort.</p>
-        </div>
-
-        <div class="service-box">
-            <img src="images/slide4.jpg">
-            <h3>Natural Lighting</h3>
-            <p>Bringing balance, comfort, and openness to your home.</p>
+            <h3>3D Visualization</h3>
+            <p>High-end renders to help you experience your space before construction.</p>
         </div>
     </div>
 </section>
-
-<!-- WHY CHOOSE US -->
-<section class="section">
-    <h2>WHY CHOOSE US</h2>
-
-    <div class="why-grid">
-        <div class="why-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png">
-            <h4>Expert Craftsmanship</h4>
-            <p>Top-quality precision work from experienced architects.</p>
-        </div>
-
-        <div class="why-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/1995/1995528.png">
-            <h4>Premium Materials</h4>
-            <p>Only the finest materials for long-lasting durability.</p>
-        </div>
-
-        <div class="why-box">
-            <img src="https://cdn-icons-png.flaticon.com/512/2541/2541991.png">
-            <h4>Attention to Detail</h4>
-            <p>Every detail is thoughtfully designed for perfection.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="section">
-    <h2>ABOUT COMPANY</h2>
-
-    <div class="about-grid">
-        <img src="images/slide2.jpg">
-
-        <div>
-            <h3>Building Excellence</h3>
-            <p>BM Designs brings modern architectural design to life with innovation, precision, and creativity.</p>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<div class="contact-banner">
-    <h2>READY TO START YOUR PROJECT?</h2>
-    <p>Let’s bring your dream space to life.</p>
-    <a href="contact.html">CONTACT US</a>
-</div>
 
 <!-- FOOTER -->
 <footer>
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
+
+<script>
+let slideIndex = 0;
+let slides = document.querySelectorAll(".hero-img");
+let dots = document.querySelectorAll(".dot");
+
+function showSlide(n) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+
+    slides[n].classList.add("active");
+    dots[n].classList.add("active");
+    slideIndex = n;
+}
+
+function currentSlide(n) {
+    showSlide(n);
+}
+
+function autoSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+setInterval(autoSlide, 6000); // 6 seconds
+showSlide(0);
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
