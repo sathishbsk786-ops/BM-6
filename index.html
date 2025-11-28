@@ -1,218 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BM DESIGNS – Architecture & Interior</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Poppins", sans-serif;
-        background: #f7f7f7;
-        color: #000;
-    }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    background: #f7f7f7;
+    color: #000;
+}
 
-    /* NAVBAR */
-    .navbar {
-        background: #ffffff !important;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.1);
-        padding: 10px 0;
-        z-index: 999;
-    }
+/* NAVBAR */
+.navbar {
+    background: #ffffff !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    z-index: 999;
+}
 
-    .navbar-brand img {
-        height: 55px;
-    }
+.navbar-brand img {
+    height: 55px;
+}
 
-    .nav-link {
-        color: #000 !important;
-        font-weight: 500;
-        margin-left: 15px;
-    }
+.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
 
-    /* HERO SECTION */
-    .hero-container {
-        width: 100%;
-        height: 85vh;
-        max-height: 700px;
-        position: relative;
-        overflow: hidden;
-        margin-top: 75px; /* Fix overlap with navbar */
-    }
+/* HERO SECTION */
+.hero-container {
+    width: 100%;
+    height: 85vh;
+    max-height: 720px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 75px;
+}
 
-    .hero-slides {
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
+.hero-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 
-    .hero-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;        /* Prevent stretching */
-        object-position: center;  /* Center image */
-        position: absolute;
-        opacity: 0;
-        transition: opacity 1s ease-in-out;
-    }
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* FIX: no stretching */
+    object-position: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
 
-    .hero-img.active {
-        opacity: 1;
-    }
+.hero-img.active {
+    opacity: 1;
+}
 
-    .hero-dots {
-        position: absolute;
-        bottom: 25px;
-        width: 100%;
-        text-align: center;
-        z-index: 10;
-    }
+/* DOTS */
+.hero-dots {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
 
-    .hero-dots .dot {
-        height: 12px;
-        width: 12px;
-        margin: 0 5px;
-        display: inline-block;
-        background: #bbb;
-        border-radius: 50%;
-        cursor: pointer;
-        transition: 0.3s;
-    }
+.hero-dots .dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-    .hero-dots .dot.active {
-        background: #333;
-        transform: scale(1.2);
-    }
+.hero-dots .dot.active {
+    background: #333;
+    transform: scale(1.2);
+}
 
-    .hero-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        width: 90%;
-        color: #fff;
-        text-shadow: 0 3px 10px rgba(0,0,0,0.6);
-        z-index: 5;
-    }
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 6;
+}
 
-    .hero-text h1 {
-        font-size: 3rem;
-        font-weight: 700;
-    }
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
 
-    .hero-text p {
-        font-size: 1.2rem;
-        opacity: 0.95;
-        margin-bottom: 20px;
-    }
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
 
-    .hero-text a {
-        display: inline-block;
-        padding: 10px 28px;
-        border: 2px solid #fff;
-        background: rgba(255,255,255,0.15);
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: 0.3s;
-    }
+.hero-text a {
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    border: 2px solid #fff;
+    background: rgba(255,255,255,0.15);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
 
-    .hero-text a:hover {
-        background: #fff;
-        color: #000;
-    }
+.hero-text a:hover {
+    background: #fff;
+    color: #000;
+}
 
-    /* SECTION BASE */
-    .section {
-        padding: 80px 10%;
-        text-align: center;
-    }
+/* SECTION */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
 
-    .section h2 {
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
+.section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
 
-    .section p {
-        max-width: 800px;
-        margin: auto;
-        margin-bottom: 40px;
-        opacity: 0.85;
-    }
+.section p {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
 
-    /* SERVICES GRID */
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
+/* SERVICES */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
 
-    .service-box {
-        background: #fff;
-        border-radius: 10px;
-        border: 1px solid #d2d2d2;
-        padding: 20px;
-        text-align: left;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.07);
-    }
+.service-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    transition: 0.35s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
 
-    .service-box img {
-        width: 100%;
-        border-radius: 8px;
-        margin-bottom: 15px;
-        object-fit: cover;
-    }
+.service-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
 
-    /* FOOTER */
-    footer {
-        background: #ffffff;
-        color: #555;
-        border-top: 1px solid #ddd;
-        text-align: center;
-        padding: 25px;
-        margin-top: 40px;
-    }
+.service-icon {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 18px;
+    opacity: 0.9;
+}
+
+.service-box h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+    line-height: 1.5rem;
+}
+
+/* FOOTER */
+footer {
+    background: #ffffff;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+}
 </style>
 </head>
+
 <body>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo.png" alt="BM Designs Logo">
-        </a>
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Packages</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Interior</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<!-- HERO SECTION WITH DOTS -->
+<!-- HERO -->
 <div class="hero-container">
     <div class="hero-slides">
         <img src="images/slide1.jpg" class="hero-img active">
@@ -223,7 +239,7 @@
     <div class="hero-text">
         <h1>Transforming Vision Into Timeless Design</h1>
         <p>Architecture & Interiors Crafted With Precision</p>
-        <a href="#">Explore</a>
+        <a href="about.html">Explore</a>
     </div>
 
     <div class="hero-dots">
@@ -234,28 +250,36 @@
 </div>
 
 <!-- SERVICES -->
-<section class="section">
+<section class="section" id="services">
     <h2>OUR SERVICES</h2>
-    <p>We provide modern architecture, interior design, and complete project planning.</p>
+    <p>We deliver complete architectural and interior design solutions with precision, creativity, and professionalism.</p>
 
     <div class="services-grid">
+
         <div class="service-box">
-            <img src="images/slide1.jpg">
+            <img class="service-icon" src="https://cdn-icons-png.flaticon.com/512/8149/8149776.png">
             <h3>Architectural Planning</h3>
-            <p>Precision-engineered building plans tailored to your vision.</p>
+            <p>Residential & commercial building planning with structural accuracy.</p>
         </div>
 
         <div class="service-box">
-            <img src="images/slide2.jpg">
+            <img class="service-icon" src="https://cdn-icons-png.flaticon.com/512/3514/3514577.png">
             <h3>Interior Design</h3>
-            <p>Modern, elegant, and functional spaces crafted for comfort.</p>
+            <p>Modern, elegant interiors crafted for comfort & long-lasting beauty.</p>
         </div>
 
         <div class="service-box">
-            <img src="images/slide5.jpg">
+            <img class="service-icon" src="https://cdn-icons-png.flaticon.com/512/3094/3094837.png">
             <h3>3D Visualization</h3>
-            <p>High-end renders to help you experience your space before construction.</p>
+            <p>Ultra-realistic 3D renders that let you preview your space.</p>
         </div>
+
+        <div class="service-box">
+            <img class="service-icon" src="https://cdn-icons-png.flaticon.com/512/1077/1077976.png">
+            <h3>Consultation</h3>
+            <p>Expert guidance for layouts, materials & cost-effective planning.</p>
+        </div>
+
     </div>
 </section>
 
@@ -265,6 +289,7 @@
 </footer>
 
 <script>
+// HERO CAROUSEL JS
 let slideIndex = 0;
 let slides = document.querySelectorAll(".hero-img");
 let dots = document.querySelectorAll(".dot");
@@ -272,7 +297,6 @@ let dots = document.querySelectorAll(".dot");
 function showSlide(n) {
     slides.forEach(s => s.classList.remove("active"));
     dots.forEach(d => d.classList.remove("active"));
-
     slides[n].classList.add("active");
     dots[n].classList.add("active");
     slideIndex = n;
@@ -287,8 +311,16 @@ function autoSlide() {
     showSlide(slideIndex);
 }
 
-setInterval(autoSlide, 6000); // 6 seconds
+setInterval(autoSlide, 6000);
 showSlide(0);
+
+// ACTIVE NAV LINK
+(function() {
+    const path = location.pathname.split("/").pop() || "index.html";
+    document.querySelectorAll(".nav-link").forEach(a => {
+        if (a.getAttribute("href") === path) a.classList.add("active");
+    });
+})();
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
