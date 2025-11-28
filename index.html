@@ -6,6 +6,7 @@
 <title>BM DESIGNS – Architecture & Interior</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
     body {
@@ -14,6 +15,22 @@
         font-family: "Poppins", sans-serif;
         background: #000;
         color: white;
+    }
+
+    /* NAVBAR */
+    .navbar {
+        background: rgba(0,0,0,0.6);
+        backdrop-filter: blur(5px);
+    }
+    .navbar-brand {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: white !important;
+    }
+    .nav-link {
+        color: white !important;
+        font-weight: 500;
+        margin-left: 15px;
     }
 
     /* HERO SLIDER */
@@ -37,10 +54,9 @@
         flex-shrink: 0;
         background-size: cover;
         background-position: center;
-        position: relative;
     }
 
-    /* HERO OVERLAY TEXT */
+    /* HERO TEXT */
     .hero-text {
         position: absolute;
         top: 50%;
@@ -48,28 +64,26 @@
         transform: translate(-50%, -50%);
         text-align: center;
         width: 90%;
+        color: white;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
 
     .hero-text h1 {
-        font-size: 3.2rem;
+        font-size: 3rem;
         font-weight: 700;
         line-height: 1.2;
-        margin-bottom: 15px;
     }
 
     .hero-text p {
         font-size: 1.1rem;
-        margin-bottom: 25px;
-        opacity: 0.9;
+        margin-bottom: 20px;
     }
 
     .hero-text a {
-        padding: 10px 26px;
-        background: transparent;
+        padding: 10px 24px;
         border: 2px solid white;
-        text-decoration: none;
         color: white;
-        font-weight: 500;
+        text-decoration: none;
         border-radius: 4px;
     }
 
@@ -83,7 +97,7 @@
         100% { transform: translateX(0%); }
     }
 
-    /* SECTION TITLES */
+    /* SECTIONS */
     .section {
         padding: 70px 10%;
         background: #000;
@@ -93,18 +107,18 @@
 
     .section h2 {
         font-size: 2rem;
-        font-weight: 700;
         margin-bottom: 10px;
+        font-weight: 700;
     }
 
     .section p {
         max-width: 800px;
         margin: auto;
-        opacity: 0.85;
         margin-bottom: 40px;
+        opacity: 0.85;
     }
 
-    /* SERVICES GRID */
+    /* SERVICES */
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -115,18 +129,11 @@
         background: #111;
         padding: 20px;
         border-radius: 8px;
-        color: white;
     }
-
     .service-box img {
         width: 100%;
         border-radius: 6px;
         margin-bottom: 15px;
-    }
-
-    .service-box h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
     }
 
     /* WHY CHOOSE US */
@@ -135,71 +142,74 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 25px;
     }
-
     .why-box {
         background: #111;
         padding: 25px;
         border-radius: 8px;
     }
 
-    .why-box img {
-        width: 60px;
-        margin-bottom: 15px;
-    }
-
-    .why-box h4 {
-        font-size: 1.2rem;
-        margin-bottom: 8px;
-    }
-
-    /* ABOUT */
+    /* ABOUT SECTION */
     .about-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 40px;
-        align-items: center;
+        margin-top: 40px;
         text-align: left;
     }
-
     .about-grid img {
         width: 100%;
         border-radius: 8px;
     }
 
-    /* CONTACT BANNER */
+    /* CONTACT */
     .contact-banner {
-        padding: 50px 10%;
         background: #111;
+        padding: 50px 10%;
         text-align: center;
     }
 
-    .contact-banner h2 {
-        margin-bottom: 10px;
-        font-size: 1.8rem;
-    }
-
     .contact-banner a {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 26px;
+        padding: 10px 24px;
         border: 2px solid white;
         color: white;
-        text-decoration: none;
         border-radius: 4px;
+        text-decoration: none;
     }
 
     /* FOOTER */
     footer {
         background: #000;
-        text-align: center;
         padding: 30px;
-        font-size: 0.9rem;
+        text-align: center;
         opacity: 0.7;
     }
-</style>
 
+</style>
 </head>
 <body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">BM DESIGNS</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <!-- HERO SECTION -->
 <div class="hero-container">
@@ -221,7 +231,7 @@
 <!-- SERVICES -->
 <section class="section">
     <h2>OUR SERVICES</h2>
-    <p>Crafted with innovation, precision, and a deep understanding of architectural excellence.</p>
+    <p>Crafted with innovation and precision to deliver timeless architecture.</p>
 
     <div class="services-grid">
         <div class="service-box">
@@ -294,6 +304,8 @@
 <footer>
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
