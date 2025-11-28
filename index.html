@@ -13,22 +13,22 @@
         margin: 0;
         padding: 0;
         font-family: "Poppins", sans-serif;
-        background: #000;
-        color: white;
+        background: #f7f7f7; /* warm white */
+        color: #000;
     }
 
     /* NAVBAR */
     .navbar {
-        background: rgba(0,0,0,0.6);
-        backdrop-filter: blur(5px);
+        background: #ffffff !important;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     .navbar-brand {
         font-weight: 700;
-        font-size: 1.6rem;
-        color: white !important;
+        font-size: 1.7rem;
+        color: #000 !important;
     }
     .nav-link {
-        color: white !important;
+        color: #000 !important;
         font-weight: 500;
         margin-left: 15px;
     }
@@ -45,7 +45,7 @@
         display: flex;
         width: 500%;
         height: 100%;
-        animation: slide 25s infinite;
+        animation: slide 25s infinite linear;
     }
 
     .slide {
@@ -64,27 +64,36 @@
         transform: translate(-50%, -50%);
         text-align: center;
         width: 90%;
-        color: white;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        color: #111;
+        text-shadow: 0 2px 12px rgba(255,255,255,0.8);
     }
 
     .hero-text h1 {
         font-size: 3rem;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: 1.3;
     }
 
     .hero-text p {
         font-size: 1.1rem;
         margin-bottom: 20px;
+        opacity: 0.9;
     }
 
     .hero-text a {
-        padding: 10px 24px;
-        border: 2px solid white;
-        color: white;
+        padding: 10px 26px;
+        border: 2px solid #d9c7a3;
+        color: #000;
         text-decoration: none;
         border-radius: 4px;
+        background: rgba(255,255,255,0.6);
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    .hero-text a:hover {
+        background: #d9c7a3;
+        color: #000;
     }
 
     /* SLIDE ANIMATION */
@@ -99,16 +108,16 @@
 
     /* SECTIONS */
     .section {
-        padding: 70px 10%;
-        background: #000;
-        color: white;
+        padding: 80px 10%;
+        background: #f7f7f7;
+        color: #000;
         text-align: center;
     }
 
     .section h2 {
         font-size: 2rem;
-        margin-bottom: 10px;
         font-weight: 700;
+        margin-bottom: 10px;
     }
 
     .section p {
@@ -118,22 +127,31 @@
         opacity: 0.85;
     }
 
-    /* SERVICES */
+    /* SERVICES GRID */
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 25px;
+        gap: 30px;
     }
 
     .service-box {
-        background: #111;
+        background: #f0ece6; /* soft beige-grey card */
         padding: 20px;
-        border-radius: 8px;
+        border-radius: 10px;
+        border: 1px solid #d2d2d2;
+        text-align: left;
     }
+
     .service-box img {
         width: 100%;
         border-radius: 6px;
         margin-bottom: 15px;
+    }
+
+    .service-box h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        font-weight: 600;
     }
 
     /* WHY CHOOSE US */
@@ -141,11 +159,19 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 25px;
+        margin-top: 30px;
     }
+
     .why-box {
-        background: #111;
+        background: #f0ece6;
         padding: 25px;
-        border-radius: 8px;
+        border-radius: 10px;
+        border: 1px solid #d2d2d2;
+    }
+
+    .why-box img {
+        width: 55px;
+        margin-bottom: 15px;
     }
 
     /* ABOUT SECTION */
@@ -153,43 +179,51 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
         gap: 40px;
-        margin-top: 40px;
         text-align: left;
-    }
-    .about-grid img {
-        width: 100%;
-        border-radius: 8px;
+        margin-top: 40px;
     }
 
-    /* CONTACT */
+    .about-grid img {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #d9c7a3;
+    }
+
+    /* CONTACT BANNER */
     .contact-banner {
-        background: #111;
-        padding: 50px 10%;
+        background: #eae6df;
+        padding: 60px 10%;
         text-align: center;
+        margin-top: 50px;
+        border-top: 1px solid #d2d2d2;
+        border-bottom: 1px solid #d2d2d2;
     }
 
     .contact-banner a {
-        padding: 10px 24px;
-        border: 2px solid white;
-        color: white;
-        border-radius: 4px;
+        padding: 10px 28px;
+        border: 2px solid #000;
+        background: #fff;
+        color: #000;
         text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
     }
 
     /* FOOTER */
     footer {
-        background: #000;
-        padding: 30px;
+        background: #ffffff;
+        padding: 25px;
         text-align: center;
-        opacity: 0.7;
+        color: #555;
+        border-top: 1px solid #ddd;
+        margin-top: 40px;
     }
-
 </style>
 </head>
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
         <a class="navbar-brand" href="index.html">BM DESIGNS</a>
 
@@ -222,8 +256,8 @@
     </div>
 
     <div class="hero-text">
-        <h1>YOUR CONSTRUCTION & INTERIOR<br>DESIGN EXPERTS</h1>
-        <p>Modern architectural solutions designed with precision, creativity, and excellence.</p>
+        <h1>YOUR CONSTRUCTION & INTERIOR DESIGN EXPERTS</h1>
+        <p>Modern architectural solutions designed with precision and creativity.</p>
         <a href="about.html">Explore</a>
     </div>
 </div>
@@ -274,7 +308,7 @@
         <div class="why-box">
             <img src="https://cdn-icons-png.flaticon.com/512/2541/2541991.png">
             <h4>Attention to Detail</h4>
-            <p>Every detail is thoughtfully designed.</p>
+            <p>Every detail is thoughtfully designed for perfection.</p>
         </div>
     </div>
 </section>
@@ -288,7 +322,7 @@
 
         <div>
             <h3>Building Excellence</h3>
-            <p>BM Designs brings modern architectural design to life with precision, innovation, and creativity.</p>
+            <p>BM Designs brings modern architectural design to life with innovation, precision, and creativity.</p>
         </div>
     </div>
 </section>
