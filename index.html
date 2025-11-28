@@ -53,12 +53,11 @@
         animation: slide 60s infinite linear;
     }
 
-    .slide {
+    .slide-img {
         width: 100%;
         height: 100%;
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
+        object-fit: cover;        /* FIXED */
+        object-position: center;  /* FIXED */
         flex-shrink: 0;
     }
 
@@ -148,6 +147,7 @@
         width: 100%;
         border-radius: 8px;
         margin-bottom: 15px;
+        object-fit: cover;
     }
 
     /* WHY CHOOSE US */
@@ -182,6 +182,7 @@
         width: 100%;
         border-radius: 10px;
         border: 2px solid #d9c7a3;
+        object-fit: cover;
     }
 
     /* CONTACT BANNER */
@@ -221,8 +222,6 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        
-        <!-- LOGO -->
         <a class="navbar-brand" href="index.html">
             <img src="images/logo.png" alt="BM Designs Logo">
         </a>
@@ -246,14 +245,14 @@
     </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO SECTION (FIXED) -->
 <div class="hero-container">
     <div class="slider">
-        <div class="slide" style="background-image: url('images/slide1.jpg');"></div>
-        <div class="slide" style="background-image: url('images/slide2.jpg');"></div>
-        <div class="slide" style="background-image: url('images/slide3.webp');"></div>
-        <div class="slide" style="background-image: url('images/slide4.jpg');"></div>
-        <div class="slide" style="background-image: url('images/slide5.jpg');"></div>
+        <img src="images/slide1.jpg" class="slide-img">
+        <img src="images/slide2.jpg" class="slide-img">
+        <img src="images/slide3.webp" class="slide-img">
+        <img src="images/slide4.jpg" class="slide-img">
+        <img src="images/slide5.jpg" class="slide-img">
     </div>
 
     <div class="hero-text">
