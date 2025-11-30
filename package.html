@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Packages | BM DESIGN</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Cinzel+Decorative:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
   <style>
     body {
@@ -32,92 +32,68 @@
       font-weight: 500;
     }
 
-    /* HEADER */
+    /* HEADER with background */
     .page-header {
       text-align: center;
-      padding: 90px 20px 40px;
-      color: #000;
+      padding: 120px 20px 80px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
     }
     .page-header h1 {
-      font-size: 2.4rem;
+      font-size: 3rem;
       margin-bottom: 10px;
       font-weight: 600;
     }
     .page-header p {
-      color: #444;
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
 
-    /* TABLE WRAPPER */
-    .package-table {
-      width: 100%;
+    /* PACKAGE CARDS */
+    .package-section {
+      padding: 60px 0;
+    }
+
+    .package-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 30px;
       background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid #e5e5e5;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .package-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.95rem;
-      color: #111;
-    }
-
-    thead th {
-      background: #fafafa;
-      padding: 16px;
-      text-align: center;
-      color: #000;
+    .package-title {
+      font-size: 1.4rem;
       font-weight: 600;
-      border: 1px solid #e5e5e5;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    /* GOLD TEXT */
     .gold-text {
       color: #d4af37 !important;
       font-weight: 700;
     }
 
-    /* Alternating rows */
-    tbody tr:nth-child(odd) td {
-      background: #ffffff;
-    }
-    tbody tr:nth-child(even) td {
-      background: #f5f5f5;
-    }
-
-    tbody td {
-      padding: 12px;
-      border: 1px solid #e5e5e5;
-      text-align: center;
-      color: #111;
-    }
-
-    tbody td:first-child {
-      text-align: left;
-      padding-left: 25px;
-      font-weight: 500;
-    }
-
-    tbody tr:hover td {
-      background: #eee;
-    }
-
-    /* SELECT BUTTON */
-    tfoot td {
-      text-align: center !important;
-      padding: 20px;
-      background: #fafafa;
-      border: 1px solid #e5e5e5;
+    .package-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.95rem;
     }
 
     .select-btn {
+      display: inline-block;
+      margin-top: 20px;
       border: 1px solid #111;
-      padding: 6px 14px;
+      padding: 8px 20px;
       color: #111;
       text-decoration: none;
-      border-radius: 4px;
+      border-radius: 6px;
       transition: 0.3s;
       font-size: 0.9rem;
     }
@@ -164,56 +140,73 @@
 <!-- HEADER -->
 <section class="page-header">
   <h1>Design Packages</h1>
-  <p>Select the perfect package for your architectural requirements.</p>
+  <p>Choose the perfect design package tailored to your needs.</p>
 </section>
 
-<!-- PACKAGE TABLE -->
-<div class="container mb-5">
-  <div class="package-table">
+<!-- PACKAGE CARDS -->
+<section class="package-section">
+  <div class="container">
+    <div class="row g-4">
 
-    <table>
-      <thead>
-        <tr>
-          <th>Specification</th>
-          <th>Basic</th>
-          <th>Standard</th>
-          <th>Premium</th>
-          <th class="gold-text">Ultra Premium</th>
-        </tr>
-      </thead>
+      <!-- BASIC -->
+      <div class="col-md-3">
+        <div class="package-card">
+          <div class="package-title">Basic</div>
+          <ul class="package-features list-unstyled">
+            <li>✓ Scheme Drawing (2D)</li>
+            <li>✕ Furniture Layout</li>
+            <li>✕ 3D Elevation</li>
+            <li>✕ Electrical & Plumbing</li>
+          </ul>
+          <a class="select-btn" href="contact.html">Select</a>
+        </div>
+      </div>
 
-      <tbody>
-        <tr><td>Scheme Drawing: All Floors (2D)</td><td>✓</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Furniture Layout: All Floors (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Elevation Design (3D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Electrical Drawings (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Plumbing Drawing (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Working Drawing (2D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Site Assessment & Site Plan</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Elevation Detail Drawing (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Half Layout: All Floors (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Interior Views: All Rooms (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
-        <tr><td>Interior Detailing (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Material & Brand Selection</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Landscaping Architecture Designs</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Topographical Survey</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-        <tr><td>Approval Drawing</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-      </tbody>
+      <!-- STANDARD -->
+      <div class="col-md-3">
+        <div class="package-card">
+          <div class="package-title">Standard</div>
+          <ul class="package-features list-unstyled">
+            <li>✓ Scheme Drawing (2D)</li>
+            <li>✓ Furniture Layout</li>
+            <li>✓ 3D Elevation</li>
+            <li>✓ Electrical & Plumbing</li>
+          </ul>
+          <a class="select-btn" href="contact.html">Select</a>
+        </div>
+      </div>
 
-      <tfoot>
-        <tr>
-          <td></td>
-          <td><a class="select-btn" href="contact.html">Select</a></td>
-          <td><a class="select-btn" href="contact.html">Select</a></td>
-          <td><a class="select-btn" href="contact.html">Select</a></td>
-          <td><a class="select-btn" href="contact.html">Select</a></td>
-        </tr>
-      </tfoot>
+      <!-- PREMIUM -->
+      <div class="col-md-3">
+        <div class="package-card">
+          <div class="package-title">Premium</div>
+          <ul class="package-features list-unstyled">
+            <li>✓ All Basic & Standard Features</li>
+            <li>✓ Working Drawings</li>
+            <li>✓ 3D Half Layout</li>
+            <li>✓ Interior Views (3D)</li>
+          </ul>
+          <a class="select-btn" href="contact.html">Select</a>
+        </div>
+      </div>
 
-    </table>
+      <!-- ULTRA PREMIUM -->
+      <div class="col-md-3">
+        <div class="package-card border-gold" style="border: 2px solid #d4af37;">
+          <div class="package-title gold-text">Ultra Premium</div>
+          <ul class="package-features list-unstyled">
+            <li class="gold-text">✓ Full Architecture Package</li>
+            <li>✓ Landscape & Material Selection</li>
+            <li>✓ Topographical Survey</li>
+            <li>✓ Approval Drawings</li>
+          </ul>
+          <a class="select-btn" href="contact.html">Select</a>
+        </div>
+      </div>
 
+    </div>
   </div>
-</div>
+</section>
 
 <footer>© 2025 BM DESIGN. All Rights Reserved.</footer>
 
