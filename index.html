@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BM DESIGNS – Architecture & Interior</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins, sans-serif;
+    background: #f7f7f7;
+    color: #000;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #ffffff !important;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    z-index: 999;
+}
+
+.navbar-brand img {
+    height: 55px;
+}
+
+.nav-link {
+    color: #000 !important;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+/* HERO SECTION */
+.hero-container {
+    width: 100%;
+    height: 85vh;
+    max-height: 720px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 75px;
+}
+
+.hero-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-img.active {
+    opacity: 1;
+}
+
+/* DOTS */
+.hero-dots {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    display: inline-block;
+    cursor: pointer;
+    background: #bbb;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #333;
+    transform: scale(1.2);
+}
+
+/* HERO TEXT */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+    color: #fff;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    z-index: 6;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.hero-text a {
+    display: inline-block;
+    padding: 10px 25px;
+    color: white;
+    border: 2px solid #fff;
+    background: rgba(255,255,255,0.15);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.hero-text a:hover {
+    background: #fff;
+    color: #000;
+}
+
+/* GENERAL SECTION */
+.section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* SERVICES SECTION */
+#services {
+    background: #f0f0f0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 35px;
+    margin-top: 40px;
+}
+
+.service-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    border: 1px solid #dcdcdc;
+    transition: 0.35s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.service-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.service-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+/* CONTACT SECTION */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.contact-box {
+    padding: 28px;
+    background: #f6f6f6;
+    border-radius: 12px;
+    border: 1px solid #dcdcdc;
+    transition: 0.3s ease;
+}
+
+.contact-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.contact-btn {
+    margin-top: 35px;
+    display: inline-block;
+    background: #000;
+    color: #fff;
+    padding: 12px 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* FOOTER */
+footer {
+    background: #ffffff;
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero-container">
+    <div class="hero-slides">
+        <img src="images/slide1.jpg" class="hero-img active">
+        <img src="images/slide2.jpg" class="hero-img">
+        <img src="images/slide5.jpg" class="hero-img">
+    </div>
+
+    <div class="hero-text">
+        <h1>Transforming Vision Into Timeless Design</h1>
+        <p>Architecture & Interiors Crafted With Precision</p>
+        <a href="about.html">Explore</a>
+    </div>
+
+    <div class="hero-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+    </div>
+</div>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+    <h2>OUR SERVICES</h2>
+    <p>We deliver complete architectural and interior design solutions with precision, creativity, and professionalism.</p>
+
+    <div class="services-grid">
+
+        <div class="service-box">
+            <img src="https://images.unsplash.com/photo-1581090464777-4b9b4c3a6f3f?w=900" class="service-img">
+            <h3>Architectural Planning</h3>
+            <p>Complete building planning including layouts, structural coordination, and space optimization.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900" class="service-img">
+            <h3>Interior Design</h3>
+            <p>Premium interiors designed with modern aesthetics and functional comfort.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="https://images.unsplash.com/photo-1600585153837-1cdb65f1a9b9?w=900" class="service-img">
+            <h3>3D Visualization</h3>
+            <p>High-quality 3D renders that let you experience your design before construction.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT US -->
+<section class="section" id="contact" style="background:#ffffff; padding:90px 10%; border-top:1px solid #dcdcdc;">
+    <h2>CONTACT US</h2>
+    <p>Reach out for architectural planning, interior design, or project enquiries.</p>
+
+    <div class="contact-grid">
+
+        <div class="contact-box">
+            <h3>Call Us</h3>
+            <p>📞 99943 82557</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Email</h3>
+            <p>✉️ sathishbaskaran786@gmail.com</p>
+        </div>
+
+        <div class="contact-box">
+            <h3>Location</h3>
+            <p>📍 Ambur, Tamil Nadu</p>
+        </div>
+
+    </div>
+
+    <a href="contact.html" class="contact-btn">Send a Message</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 BM DESIGNS. All Rights Reserved.
+</footer>
+
+<!-- SLIDER SCRIPT -->
+<script>
+let slideIndex = 0;
+let slides = document.querySelectorAll(".hero-img");
+let dots = document.querySelectorAll(".dot");
+
+function showSlide(n) {
+    slides.forEach(s => s.classList.remove("active"));
+    dots.forEach(d => d.classList.remove("active"));
+    slides[n].classList.add("active");
+    dots[n].classList.add("active");
+    slideIndex = n;
+}
+
+function currentSlide(n) {
+    showSlide(n);
+}
+
+function autoSlide() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+}
+
+setInterval(autoSlide, 6000);
+showSlide(0);
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
