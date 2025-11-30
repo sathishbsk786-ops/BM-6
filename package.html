@@ -110,7 +110,46 @@
       margin-top: 50px;
       border-top: 1px solid #ddd;
     }
-  </style>
+  
+
+    /* PROFESSIONAL TABLE STYLING */
+    .pro-table {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+    }
+
+    .pro-head {
+      background: #f8f8f8;
+      padding: 18px;
+      font-weight: 600;
+      text-align: center;
+      border-bottom: 2px solid #eee;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #fafafa;
+    }
+
+    tbody td {
+      padding: 14px 12px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+
+    tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+      padding-left: 20px;
+    }
+
+    tbody tr:hover td {
+      background: #f0f0f0;
+      transition: 0.25s;
+    }
+
+</style>
 </head>
 
 <body>
@@ -148,18 +187,19 @@
   <div class="container mb-5">
     <div class="package-table" style="border-radius: 14px; overflow: hidden; border: 2px solid #ddd;">
 
-      <table style="width:100%; font-size:1rem;">
+      <table class="pro-table" style="width:100%; font-size:1.05rem; border-collapse:separate; border-spacing:0;">
         <thead>
           <tr>
-            <th style="padding:20px; font-size:1.1rem;">Specification</th>
-            <th style="padding:20px; font-size:1.1rem;">Basic</th>
-            <th style="padding:20px; font-size:1.1rem;">Standard</th>
-            <th style="padding:20px; font-size:1.1rem;">Premium</th>
-            <th class="gold-text" style="padding:20px; font-size:1.1rem;">Ultra Premium</th>
+            <th class="pro-head">Specification</th>
+            <th class="pro-head">Basic</th>
+            <th class="pro-head">Standard</th>
+            <th class="pro-head">Premium</th>
+            <th class="pro-head gold-text">Ultra Premium</th>
           </tr>
         </thead>
 
         <tbody>
+          <!-- ORIGINAL + ENHANCED OPTIONS -->
           <tr><td>Scheme Drawing (2D)</td><td>✓</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>Furniture Layout (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>Elevation Design (3D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
@@ -175,8 +215,8 @@
           <tr><td>Landscape Architecture</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
           <tr><td>Topographical Survey</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
           <tr><td>Approval Drawings</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-          
-          <!-- MORE OPTIONS ADDED -->
+
+          <!-- EXTRA OPTIONS -->
           <tr><td>Vastu Consultation</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>Structural Coordination</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>MEP Coordination</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
@@ -193,7 +233,6 @@
             <td><a class="select-btn" href="contact.html">Select</a></td>
           </tr>
         </tfoot>
-
       </table>
 
     </div>
