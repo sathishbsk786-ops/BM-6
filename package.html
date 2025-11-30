@@ -149,6 +149,26 @@
       transition: 0.25s;
     }
 
+
+
+    /* ANIMATIONS */
+    .pro-table tbody tr {
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInUp 0.5s ease forwards;
+    }
+    .pro-table tbody tr:nth-child(even) {
+      animation-delay: 0.1s;
+    }
+    .pro-table tbody tr:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
 </style>
 </head>
 
@@ -220,8 +240,8 @@
           <tr><td>Vastu Consultation</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>Structural Coordination</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
           <tr><td>MEP Coordination</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
-          <tr><td>3D Walkthrough Animation</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">Optional Add-On</td></tr>
-          <tr><td>Full Construction Support</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">Optional</td></tr>
+          <tr><td>3D Walkthrough Animation</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Full Construction Support</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
         </tbody>
 
         <tfoot>
