@@ -7,13 +7,31 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #ffffff;
+      color: #000000;
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      background: #ffffff !important;
+      color: #000 !important;
+      border-bottom: 1px solid #ddd;
+    }
+    header .nav-link { color: #000 !important; }
+    header .nav-link.active { font-weight: 600; }
+
+    footer {
+      background: #111 !important;
+      color: #fff !important;
+    }
+  </style>
 </head>
 <body>
 
-<header class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+<header class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container">
-    <a class="navbar-brand fw-bold fs-4" href="index.html">BM DESIGN</a>
+    <a class="navbar-brand fw-bold fs-4 text-black" href="index.html">BM DESIGN</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +49,7 @@
   </div>
 </header>
 
-<section class="py-5 text-center bg-dark text-light mt-5">
+<section class="py-5 text-center mt-5">
   <div class="container">
     <h1 class="fw-bold">Interior Design</h1>
     <p>Elegant and functional spaces for every lifestyle.</p>
@@ -39,13 +57,28 @@
 </section>
 
 <section class="py-5">
-  <div class="container text-center">
-    <img src="images/sample3.jpg" class="img-fluid rounded shadow mb-4" alt="Interior">
-    <p>BM DESIGN offers complete interior design services — from space planning and color consultation to furniture selection and material design — all curated to match your lifestyle and aesthetic preferences.</p>
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Residential Column -->
+      <div class="col-md-6">
+        <h2 class="fw-bold text-center mb-3">Residential</h2>
+        <img src="images/sample3.jpg" class="img-fluid rounded shadow mb-3" alt="Residential Interior">
+        <p>BM DESIGN offers complete residential interior solutions — including space planning, color consultancy, modular kitchens, bedroom interiors, and custom furniture to match your home lifestyle and comfort.</p>
+      </div>
+
+      <!-- Commercial Column -->
+      <div class="col-md-6">
+        <h2 class="fw-bold text-center mb-3">Commercial</h2>
+        <img src="images/sample3.jpg" class="img-fluid rounded shadow mb-3" alt="Commercial Interior">
+        <p>We specialize in commercial interiors such as office spaces, showrooms, retail outlets, and hospitality designs with professional planning aimed at productivity, branding, and customer experience.</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
-<footer class="bg-dark text-white text-center py-4">
+<footer class="text-center py-4">
   <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
 </footer>
 
@@ -53,6 +86,5 @@
 <a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
 </body>
 </html>
