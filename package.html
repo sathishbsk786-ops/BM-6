@@ -143,66 +143,58 @@
   <p>Choose the perfect design package tailored to your needs.</p>
 </section>
 
-<!-- PACKAGE CARDS -->
+<!-- PACKAGE TABLE (Improved & Larger) -->
 <section class="package-section">
-  <div class="container">
-    <div class="row g-4">
+  <div class="container mb-5">
+    <div class="package-table" style="border-radius: 14px; overflow: hidden; border: 2px solid #ddd;">
 
-      <!-- BASIC -->
-      <div class="col-md-3">
-        <div class="package-card">
-          <div class="package-title">Basic</div>
-          <ul class="package-features list-unstyled">
-            <li>✓ Scheme Drawing (2D)</li>
-            <li>✕ Furniture Layout</li>
-            <li>✕ 3D Elevation</li>
-            <li>✕ Electrical & Plumbing</li>
-          </ul>
-          <a class="select-btn" href="contact.html">Select</a>
-        </div>
-      </div>
+      <table style="width:100%; font-size:1rem;">
+        <thead>
+          <tr>
+            <th style="padding:20px; font-size:1.1rem;">Specification</th>
+            <th style="padding:20px; font-size:1.1rem;">Basic</th>
+            <th style="padding:20px; font-size:1.1rem;">Standard</th>
+            <th style="padding:20px; font-size:1.1rem;">Premium</th>
+            <th class="gold-text" style="padding:20px; font-size:1.1rem;">Ultra Premium</th>
+          </tr>
+        </thead>
 
-      <!-- STANDARD -->
-      <div class="col-md-3">
-        <div class="package-card">
-          <div class="package-title">Standard</div>
-          <ul class="package-features list-unstyled">
-            <li>✓ Scheme Drawing (2D)</li>
-            <li>✓ Furniture Layout</li>
-            <li>✓ 3D Elevation</li>
-            <li>✓ Electrical & Plumbing</li>
-          </ul>
-          <a class="select-btn" href="contact.html">Select</a>
-        </div>
-      </div>
+        <tbody>
+          <tr><td>Scheme Drawing (2D)</td><td>✓</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Furniture Layout (2D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Elevation Design (3D)</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Electrical Drawing</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Plumbing Drawing</td><td>✕</td><td>✓</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Working Drawings</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Site Assessment</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Elevation Detail (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Half Layout (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Interior Views (3D)</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Interior Detailing (2D)</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Material & Brand Selection</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Landscape Architecture</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Topographical Survey</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>Approval Drawings</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          
+          <!-- MORE OPTIONS ADDED -->
+          <tr><td>Vastu Consultation</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>Structural Coordination</td><td>✕</td><td>✕</td><td>✓</td><td class="gold-text">✓</td></tr>
+          <tr><td>MEP Coordination</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">✓</td></tr>
+          <tr><td>3D Walkthrough Animation</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">Optional Add-On</td></tr>
+          <tr><td>Full Construction Support</td><td>✕</td><td>✕</td><td>✕</td><td class="gold-text">Optional</td></tr>
+        </tbody>
 
-      <!-- PREMIUM -->
-      <div class="col-md-3">
-        <div class="package-card">
-          <div class="package-title">Premium</div>
-          <ul class="package-features list-unstyled">
-            <li>✓ All Basic & Standard Features</li>
-            <li>✓ Working Drawings</li>
-            <li>✓ 3D Half Layout</li>
-            <li>✓ Interior Views (3D)</li>
-          </ul>
-          <a class="select-btn" href="contact.html">Select</a>
-        </div>
-      </div>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td><a class="select-btn" href="contact.html">Select</a></td>
+            <td><a class="select-btn" href="contact.html">Select</a></td>
+            <td><a class="select-btn" href="contact.html">Select</a></td>
+            <td><a class="select-btn" href="contact.html">Select</a></td>
+          </tr>
+        </tfoot>
 
-      <!-- ULTRA PREMIUM -->
-      <div class="col-md-3">
-        <div class="package-card border-gold" style="border: 2px solid #d4af37;">
-          <div class="package-title gold-text">Ultra Premium</div>
-          <ul class="package-features list-unstyled">
-            <li class="gold-text">✓ Full Architecture Package</li>
-            <li>✓ Landscape & Material Selection</li>
-            <li>✓ Topographical Survey</li>
-            <li>✓ Approval Drawings</li>
-          </ul>
-          <a class="select-btn" href="contact.html">Select</a>
-        </div>
-      </div>
+      </table>
 
     </div>
   </div>
