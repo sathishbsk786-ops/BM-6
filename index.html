@@ -297,7 +297,6 @@ footer {
         font-size: 0.9rem;
     }
 }
-
 </style>
 </head>
 
@@ -435,31 +434,43 @@ footer {
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
 
-<!-- SLIDER SCRIPT -->
+<!-- SLIDER SCRIPT (Fixed & Error-Proof) -->
 <script>
-let slideIndex = 0;
-let slides = document.querySelectorAll(".hero-img");
-let dots = document.querySelectorAll(".dot");
+document.addEventListener('DOMContentLoaded', function () {
+  const slides = Array.from(document.querySelectorAll('.hero-img'));
+  const dots = Array.from(document.querySelectorAll('.dot'));
 
-function showSlide(n) {
-    slides.forEach(s => s.classList.remove("active"));
-    dots.forEach(d => d.classList.remove("active"));
-    slides[n].classList.add("active");
-    dots[n].classList.add("active");
+  // Fallback if images missing
+  slides.forEach(s => {
+    s.onerror = function () {
+      this.src = 'https://via.placeholder.com/1600x800?text=Image+Missing';
+    };
+  });
+
+  if (slides.length === 0) return;
+
+  let slideIndex = 0;
+
+  function showSlide(n) {
+    n = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === n));
+    dots.forEach((d, i) => d.classList.toggle('active', i === n));
     slideIndex = n;
-}
+  }
 
-function currentSlide(n) {
+  window.currentSlide = function (n) {
     showSlide(n);
-}
+  };
 
-function autoSlide() {
+  function autoSlide() {
     slideIndex = (slideIndex + 1) % slides.length;
     showSlide(slideIndex);
-}
+  }
 
-setInterval(autoSlide, 6000);
-showSlide(0);
+  if (slides.length > 1) setInterval(autoSlide, 6000);
+
+  showSlide(0);
+});
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
