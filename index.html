@@ -218,6 +218,73 @@ footer {
     padding: 25px;
     border-top: 1px solid #ddd;
 }
+
+
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+
+    /* Reduce hero height on phones */
+    .hero-container {
+        height: 60vh;
+        margin-top: 60px;
+    }
+
+    /* Smaller hero title */
+    .hero-text h1 {
+        font-size: 1.9rem;
+        line-height: 2.2rem;
+        padding: 0 10px;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    /* Navbar spacing */
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Reduce padding for sections */
+    .section {
+        padding: 50px 5%;
+    }
+
+    /* Grid adjustments */
+    .services-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Service boxes spacing */
+    .service-box {
+        padding: 25px 18px;
+    }
+
+    /* Contact boxes */
+    .contact-box {
+        padding: 22px;
+    }
+
+    /* Footer spacing */
+    footer {
+        padding: 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+    .hero-text a {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
+
 </style>
 </head>
 
