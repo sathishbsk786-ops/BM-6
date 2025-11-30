@@ -3,48 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | BM DESIGN Architecture and Interior Design</title>
+  <title>About | BM DESIGN Architecture & Interior Studio</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body style="background:#ffffff; color:#1F1F1F;">
 
-<header class="navbar navbar-expand-lg fixed-top shadow-sm" style="background:#f5e9d3;">
+  <!-- Animate.css for smooth animations -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    body {
+      background: #ffffff;
+      color: #1F1F1F;
+      font-family: 'Poppins', sans-serif;
+    }
+    header {
+      background:white !important;
+    }
+    .hero {
+      background:#F2F2F2;
+      color:#1F1F1F;
+    }
+    .section-title {
+      font-weight:700;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="navbar navbar-expand-lg fixed-top shadow-sm">
   <div class="container d-flex align-items-center">
-    <a class="navbar-brand fw-bold fs-4 d-flex align-items-center" href="index.html">
-      <img src="images/logo.png" alt="BM DESIGN Logo" style="height:58px;">
+
+    <!-- LOGO ONLY -->
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
+      <img src="images/logo.png" alt="BM DESIGN Logo" style="height:60px;">
     </a>
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link active" style="color:#000;" href="about.html">About</a></li>
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="package.html">Packages</a></li>
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="interior.html">Interior</a></li>
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="gallery.html">Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" style="color:#000;" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
     </div>
+
   </div>
 </header>
 
-<section class="py-5 text-center mt-5 hero animate__animated animate__fadeInDown" style="background:#F2F2F2; color:#1F1F1F;">
+<!-- HERO -->
+<section class="py-5 text-center mt-5 hero animate__animated animate__fadeInDown">
   <div class="container">
     <h1 class="fw-bold">About BM DESIGN</h1>
     <p>Crafting timeless spaces that tell your story.</p>
   </div>
 </section>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+<!-- ABOUT US -->
 <section class="py-5">
   <div class="container">
     <div class="row align-items-center">
+
+      <!-- IMAGE -->
+      <div class="col-md-6 mb-4 animate__animated animate__fadeInLeft">
+        <img src="images/architect-hands.png" class="img-fluid rounded shadow" alt="Architect at Work">
+      </div>
+
+      <!-- TEXT -->
       <div class="col-md-6 animate__animated animate__fadeInRight">
         <h2 class="section-title">Who We Are</h2>
         <p>
@@ -78,32 +113,19 @@
         <p class="mt-3">
           With BM DESIGN, your home becomes a vision brought to life — a place where your future takes shape with purpose and style.
         </p>
-      </div>
-      </div>
-      <div class="col-md-6">
-        <img src="images/architect-hands.jpg" class="img-fluid rounded shadow" alt="Architect at Work">
-      </div>
-      <div class="col-md-6">
-        <h2 class="fw-bold">Who We Are</h2>
-        <p>BM DESIGN is dedicated to creating elegant, functional architectural and interior design solutions. Our work blends modern aesthetics with practical innovation, ensuring every space tells a story with purpose and clarity.</p>
 
-        <h3 class="fw-bold mt-4">Founder</h3>
-        <p><strong>Ar. Sathishkumar Baskaran, B.Arch, M.A</strong> — completed his Bachelor's in Architecture in 2020 and earned his Master’s degree in Interior Architecture and Design in the UK in 2023. His international exposure and creative vision shape the foundation of BM DESIGN.</p>
-
-        <p>We design spaces that help you see your future before it is built — whether it’s your dream home or a commercial masterpiece. Every project we create carries a unique emotional value, crafted with the belief that architecture is not just about structures but about experiences. Our spaces are designed to evoke comfort, inspiration, and a sense of belonging — ensuring that each client feels the uniqueness of their journey reflected in the design.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer class="text-center py-4" style="background:#F2F2F2; color:#1F1F1F;">
   <p class="mb-0">© 2025 BM DESIGN. All Rights Reserved.</p>
 </footer>
 
-<div id="scrollTop"><i class="fa fa-arrow-up"></i></div>
-<a href="https://wa.me/9994382557" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
+<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/script.js"></script>
+
 </body>
 </html>
