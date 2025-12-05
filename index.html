@@ -132,7 +132,7 @@ body {
     color: #000;
 }
 
-/* GENERAL SECTION */
+/* SECTION */
 .section {
     padding: 80px 10%;
     text-align: center;
@@ -143,25 +143,25 @@ body {
     font-weight: 700;
 }
 
-/* WHY CHOOSE US */
+/* WHY CHOOSE US - 2 COLUMN GRID */
 #why {
     background: #fff;
     padding: 70px 10%;
-    border-bottom: 1px solid #e3e3e3;
 }
 
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 35px;
     margin-top: 40px;
 }
 
 .why-box {
     background: #f7f7f7;
     border-radius: 12px;
-    padding: 30px 25px;
+    padding: 25px;
     border: 1px solid #ddd;
+    text-align: left;
     transition: 0.3s;
 }
 
@@ -170,48 +170,24 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
-/* SERVICES */
-#services {
-    background: #f0f0f0;
+/* SCROLL ANIMATION */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.9s ease;
 }
 
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 35px;
-    margin-top: 40px;
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.service-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 35px 25px;
-    text-align: center;
-    border: 1px solid #dcdcdc;
-    transition: 0.35s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.service-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-.service-img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 18px;
-}
-
-/* CONTACT SECTION */
+/* CONTACT */
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     margin-top: 40px;
-    text-align: left;
 }
 
 .contact-box {
@@ -219,12 +195,6 @@ body {
     background: #f6f6f6;
     border-radius: 12px;
     border: 1px solid #dcdcdc;
-    transition: 0.3s ease;
-}
-
-.contact-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .contact-btn {
@@ -241,21 +211,15 @@ body {
 /* FOOTER */
 footer {
     background: #ffffff;
-    text-align: center;
     padding: 25px;
     border-top: 1px solid #ddd;
+    text-align: center;
 }
 
-/* RESPONSIVE FIXES */
+/* MOBILE FIXES */
 @media (max-width: 768px) {
     .hero-container { height: 60vh; margin-top: 60px; }
-    .hero-text h1 { font-size: 1.9rem; }
-    .section { padding: 50px 5%; }
-    .services-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-    .hero-text h1 { font-size: 1.6rem; }
+    .why-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -265,9 +229,7 @@ footer {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="logo">
-        </a>
+        <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -275,10 +237,8 @@ footer {
 
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
                 <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -287,7 +247,7 @@ footer {
     </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <div class="hero-container">
     <div class="hero-slides">
         <img src="images/slide1.jpg" class="hero-img active">
@@ -311,111 +271,46 @@ footer {
 <!-- WHY CHOOSE US -->
 <section class="section" id="why">
     <h2>WHY CHOOSE US</h2>
-    <p>We provide trusted, professional, and high-quality design solutions tailored to your needs.</p>
+    <p>We deliver professional, creative, and reliable architectural & interior solutions.</p>
 
     <div class="why-grid">
 
-        <div class="why-box">
-            <h3>Expert Design Team</h3>
-            <p>Skilled professionals delivering innovative and functional design concepts.</p>
-        </div>
+        <div class="why-box reveal"><h3>Expert Design Team</h3><p>Skilled professionals delivering innovative and functional design concepts.</p></div>
 
-        <div class="why-box">
-            <h3>Premium Quality Materials</h3>
-            <p>We use only top-tier materials ensuring durability and long-lasting results.</p>
-        </div>
+        <div class="why-box reveal"><h3>Premium Quality Materials</h3><p>We use best-in-class materials ensuring durability and long-lasting value.</p></div>
 
-        <div class="why-box">
-            <h3>Innovative & Modern Concepts</h3>
-            <p>Creative ideas with modern architectural and interior trends.</p>
-        </div>
+        <div class="why-box reveal"><h3>Innovative & Modern Concepts</h3><p>Creative solutions inspired by the latest global trends.</p></div>
 
-        <div class="why-box">
-            <h3>Cost-Effective Solutions</h3>
-            <p>High-quality designs tailored to fit different budget requirements.</p>
-        </div>
+        <div class="why-box reveal"><h3>Cost-Effective Solutions</h3><p>Quality designs tailored to your budget without compromise.</p></div>
 
-        <div class="why-box">
-            <h3>Timely Project Delivery</h3>
-            <p>Your project is completed within the promised schedule—every time.</p>
-        </div>
+        <div class="why-box reveal"><h3>Timely Project Delivery</h3><p>We deliver every project on schedule—no delays.</p></div>
 
-        <div class="why-box">
-            <h3>100% Client Satisfaction</h3>
-            <p>Your satisfaction is our ultimate goal—designs crafted just for you.</p>
-        </div>
+        <div class="why-box reveal"><h3>100% Client Satisfaction</h3><p>Your happiness is our priority—we refine until you love it.</p></div>
 
-    </div>
-</section>
+        <div class="why-box reveal"><h3>Transparent Pricing</h3><p>No hidden charges—full clarity throughout your project.</p></div>
 
-<!-- SERVICES -->
-<section class="section" id="services">
-    <h2>OUR SERVICES</h2>
-    <p>We deliver complete architectural and interior design solutions with precision, creativity, and professionalism.</p>
+        <div class="why-box reveal"><h3>Professional Project Management</h3><p>Organized planning and execution from start to finish.</p></div>
 
-    <div class="services-grid">
+        <div class="why-box reveal"><h3>Creative Space Utilization</h3><p>Smart designs that maximize usable space efficiently.</p></div>
 
-        <div class="service-box">
-            <img src="images/service1.jpg" class="service-img">
-            <h3>Architectural Planning & Layouts</h3>
-            <p>Smart space planning with structurally optimized and functional layouts.</p>
-        </div>
+        <div class="why-box reveal"><h3>Sustainable & Eco-Friendly Designs</h3><p>Green design options that support environmental wellness.</p></div>
 
-        <div class="service-box">
-            <img src="images/service2.jpg" class="service-img">
-            <h3>Interior Design & Execution</h3>
-            <p>Beautiful interior spaces crafted with aesthetic precision and quality execution.</p>
-        </div>
+        <div class="why-box reveal"><h3>Custom Tailored Solutions</h3><p>Every project is designed uniquely based on your needs.</p></div>
 
-        <div class="service-box">
-            <img src="images/service3.jpg" class="service-img">
-            <h3>3D Visualization & Rendering</h3>
-            <p>Realistic 3D renders allowing you to visualize before construction.</p>
-        </div>
-
-        <div class="service-box">
-            <img src="images/service4.jpg" class="service-img">
-            <h3>Building Elevation Design</h3>
-            <p>Stylish, modern, and structurally impressive elevation concepts.</p>
-        </div>
-
-        <div class="service-box">
-            <img src="images/service5.jpg" class="service-img">
-            <h3>Renovation & Remodeling</h3>
-            <p>Transforming existing spaces into modern, elegant, and functional designs.</p>
-        </div>
-
-        <div class="service-box">
-            <img src="images/service6.jpg" class="service-img">
-            <h3>Vastu-Compliant Designs</h3>
-            <p>Designs aligned with Vastu principles for harmony and positive energy.</p>
-        </div>
+        <div class="why-box reveal"><h3>End-to-End Service Support</h3><p>We handle everything—from concept to completion.</p></div>
 
     </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact" style="background:#ffffff; padding:90px 10%; border-top:1px solid #dcdcdc;">
+<section class="section" id="contact" style="background:#ffffff; border-top:1px solid #dcdcdc;">
     <h2>CONTACT US</h2>
     <p>Reach out for architectural planning, interior design, or project enquiries.</p>
 
     <div class="contact-grid">
-
-        <div class="contact-box">
-            <h3>Call Us</h3>
-            <p>📞 99943 82557</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Email</h3>
-            <p>✉️ sathishbaskaran786@gmail.com</p>
-        </div>
-
-        <div class="contact-box">
-            <h3>Location</h3>
-            <p>📍 Ambur, Tamil Nadu</p>
-        </div>
-
+        <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
+        <div class="contact-box"><h3>Email</h3><p>✉️ sathishbaskaran786@gmail.com</p></div>
+        <div class="contact-box"><h3>Location</h3><p>📍 Ambur, Tamil Nadu</p></div>
     </div>
 
     <a href="contact.html" class="contact-btn">Send a Message</a>
@@ -434,24 +329,38 @@ document.addEventListener('DOMContentLoaded', function () {
   let slideIndex = 0;
 
   function showSlide(n) {
-    slides.forEach((s, i) => s.classList.toggle('active', i === n));
-    dots.forEach((d, i) => d.classList.toggle('active', i === n));
+    slides.forEach((s,i)=>s.classList.toggle('active',i===n));
+    dots.forEach((d,i)=>d.classList.toggle('active',i===n));
     slideIndex = n;
   }
 
-  window.currentSlide = function(n) {
-    showSlide(n);
-  };
+  window.currentSlide = (n)=>showSlide(n);
 
   function autoSlide() {
     slideIndex = (slideIndex + 1) % slides.length;
     showSlide(slideIndex);
   }
 
-  if (slides.length > 1) setInterval(autoSlide, 6000);
-
+  setInterval(autoSlide, 6000);
   showSlide(0);
 });
+</script>
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((el) => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        const revealPoint = 100;
+        if (elementTop < windowHeight - revealPoint) {
+            el.classList.add('active');
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
