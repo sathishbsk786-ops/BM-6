@@ -89,8 +89,6 @@ html { scroll-behavior: smooth; }
     font-weight: 600;
 }
 
-.hero-text a:hover { background: var(--blue-light); }
-
 /* SECTION TITLE */
 .section { padding: 80px 10%; text-align: center; }
 
@@ -98,8 +96,8 @@ html { scroll-behavior: smooth; }
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--blue);
-    display: inline-block;
     position: relative;
+    display: inline-block;
 }
 
 .section h2::after {
@@ -111,27 +109,6 @@ html { scroll-behavior: smooth; }
     left: 20%;
     bottom: -10px;
     border-radius: 10px;
-}
-
-/* ABOUT SECTION */
-.about-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-    align-items: center;
-}
-
-.about-text {
-    font-size: 1.1rem;
-    line-height: 1.7rem;
-    color: #333;
-}
-
-.about-img {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
 /* WHY CHOOSE US */
@@ -149,23 +126,22 @@ html { scroll-behavior: smooth; }
 
 .why-box {
     background: white;
-    border-radius: 12px;
     padding: 30px 25px;
+    border-radius: 12px;
     border: 1px solid #ddd;
-    transition: 0.35s ease;
     text-align: center;
+    transition: 0.3s ease;
 }
 
 .why-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 15px 30px rgba(26,60,139,0.18);
     border-color: var(--blue-light);
+    box-shadow: 0 12px 24px rgba(26,60,139,0.18);
 }
 
-/* PREMIUM GRADIENT SUPER ICONS */
 .why-box i {
     font-size: 48px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #5f27cd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -176,11 +152,13 @@ html { scroll-behavior: smooth; }
     transform: scale(1.15);
     background: linear-gradient(45deg, #48dbfb, #1dd1a1, #feca57);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 }
 
 /* CONTACT */
-#contact { background: var(--white); }
+#contact {
+    background: white;
+    padding: 75px 10%;
+}
 
 .contact-grid {
     display: grid;
@@ -196,16 +174,11 @@ html { scroll-behavior: smooth; }
     transition: 0.25s;
 }
 
-.contact-box:hover {
-    transform: translateY(-5px);
-    border-color: var(--blue);
-}
-
 footer {
     background: var(--blue);
     padding: 25px;
-    text-align: center;
     color: white;
+    text-align: center;
 }
 </style>
 </head>
@@ -226,7 +199,7 @@ footer {
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
                 <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
@@ -244,84 +217,47 @@ footer {
 
     <div class="hero-text">
         <h1>Transforming Vision Into Timeless Design</h1>
-        <p>Premium Architecture & Interior Designs</p>
-        <a href="about.html">Explore</a>
+        <p>Premium Architecture & Interiors</p>
+        <a href="services.html">Our Services</a>
     </div>
 </div>
-
-<!-- ABOUT SECTION -->
-<section class="section" id="about">
-    <h2>ABOUT US</h2>
-
-    <div class="about-container">
-        <div class="about-text">
-            <p>
-                At <strong>BM DESIGNS</strong>, we bring creativity, precision, and innovation 
-                together to create spaces that inspire. With years of architectural and 
-                interior design expertise, we craft homes and commercial spaces that are 
-                elegant, functional, and timeless.
-            </p>
-            <p>
-                Our mission is simple — to deliver designs that reflect your personality, 
-                enhance your lifestyle, and elevate your experience. From concept to 
-                completion, we ensure perfection in every detail.
-            </p>
-        </div>
-
-        <img src="images/about.jpg" class="about-img" alt="About Image">
-    </div>
-</section>
 
 <!-- WHY CHOOSE US -->
 <section id="why">
     <h2>WHY CHOOSE US</h2>
-    <p style="color:#333; margin-top:10px;">Trusted, premium-quality design solutions for every project.</p>
 
     <div class="why-grid">
 
         <div class="why-box">
             <i class="bi bi-people-fill"></i>
             <h3>Expert Designers</h3>
-            <p>Professional architects delivering world-class designs.</p>
+            <p>Experienced architects creating premium spaces.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-lightning-charge-fill"></i>
             <h3>Fast Execution</h3>
-            <p>Quick project turnaround without compromising quality.</p>
+            <p>Quick delivery without compromising quality.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-brush-fill"></i>
             <h3>Creative Concepts</h3>
-            <p>Unique modern designs crafted for your lifestyle.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-bank2"></i>
-            <h3>Architectural Expertise</h3>
-            <p>Beautiful, strong, and functional structural planning.</p>
+            <p>Unique designs tailored to your style.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-stars"></i>
-            <h3>Premium Quality</h3>
-            <p>Top-class finishing with long-lasting materials.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-emoji-smile-fill"></i>
-            <h3>Client Satisfaction</h3>
-            <p>Your happiness is our highest priority.</p>
+            <h3>Premium Finishing</h3>
+            <p>High-quality materials and workmanship.</p>
         </div>
 
     </div>
 </section>
 
 <!-- CONTACT -->
-<section class="section" id="contact">
+<section id="contact" class="section">
     <h2>CONTACT US</h2>
-    <p>We are ready to bring your dream project to life.</p>
 
     <div class="contact-grid">
         <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
@@ -334,22 +270,19 @@ footer {
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
 
-<!-- Slider Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".hero-img");
     let index = 0;
 
     function show(i) {
-        slides.forEach((slide, x) => slide.classList.toggle("active", x === i));
+        slides.forEach((s, x) => s.classList.toggle("active", x === i));
     }
 
     setInterval(() => {
         index = (index + 1) % slides.length;
         show(index);
     }, 6000);
-
-    show(0);
 });
 </script>
 
