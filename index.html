@@ -282,4 +282,122 @@ footer {
 <!-- WHY CHOOSE US -->
 <section class="section" id="why">
     <h2>WHY CHOOSE US</h2>
-    <p style="color:#ddd;">Premium quality, trusted expertise, and unmatched design excellence.
+    <p style="color:#ddd;">Premium quality, trusted expertise, and unmatched design excellence.</p>
+
+    <div class="why-grid">
+
+        <div class="why-box">
+            <i class="bi bi-people-fill"></i>
+            <h3>Expert Design Team</h3>
+            <p>Experienced architects & designers producing remarkable work.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-patch-check-fill"></i>
+            <h3>Premium Materials</h3>
+            <p>High-quality materials that ensure luxury & durability.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-lightbulb-fill"></i>
+            <h3>Modern Concepts</h3>
+            <p>Trend-setting designs with timeless appeal.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-cash-stack"></i>
+            <h3>Cost-Effective</h3>
+            <p>Best-in-class design at competitive pricing.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-clock-history"></i>
+            <h3>On-Time Delivery</h3>
+            <p>We value your time — deadlines always met.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-emoji-smile-fill"></i>
+            <h3>Client Satisfaction</h3>
+            <p>Your dream space is our priority.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-receipt-cutoff"></i>
+            <h3>Transparent Pricing</h3>
+            <p>No hidden fees. 100% clarity guaranteed.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-diagram-3-fill"></i>
+            <h3>Professional Workflow</h3>
+            <p>Structured planning for flawless execution.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-aspect-ratio-fill"></i>
+            <h3>Space Optimization</h3>
+            <p>Maximizing beauty & usability in every inch.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-tree-fill"></i>
+            <h3>Eco-Friendly Designs</h3>
+            <p>Sustainable concepts with modern aesthetics.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-sliders"></i>
+            <h3>Custom Solutions</h3>
+            <p>Designs crafted uniquely for you.</p>
+        </div>
+
+        <div class="why-box">
+            <i class="bi bi-headset"></i>
+            <h3>End-to-End Support</h3>
+            <p>We handle everything — stress-free execution.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <h2>CONTACT US</h2>
+    <p style="color:#ccc;">Let's bring your dream project to life.</p>
+
+    <div class="contact-grid">
+        <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
+        <div class="contact-box"><h3>Email</h3><p>✉️ sathishbaskaran786@gmail.com</p></div>
+        <div class="contact-box"><h3>Location</h3><p>📍 Ambur, Tamil Nadu</p></div>
+    </div>
+
+    <a href="contact.html" class="contact-btn">Send a Message</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 BM DESIGNS. All Rights Reserved.
+</footer>
+
+<!-- SLIDER SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelectorAll(".hero-img");
+    let index = 0;
+    
+    function show(i) {
+        slides.forEach((s, x) => s.classList.toggle("active", x === i));
+    }
+    
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        show(index);
+    }, 6000);
+    
+    show(0);
+});
+</script>
+
+</body>
+</html>
