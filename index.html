@@ -11,6 +11,9 @@
 <!-- Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
@@ -27,11 +30,7 @@ body {
     padding: 10px 0;
     z-index: 999;
 }
-
-.navbar-brand img {
-    height: 55px;
-}
-
+.navbar-brand img { height: 55px; }
 .nav-link {
     color: #000 !important;
     font-weight: 500;
@@ -47,179 +46,128 @@ body {
     overflow: hidden;
     margin-top: 75px;
 }
-
-.hero-slides {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
+.hero-slides { width: 100%; height: 100%; position: relative; }
 .hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    position: absolute;
-    opacity: 0;
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: center;
+    position: absolute; opacity: 0;
     transition: opacity 1s ease-in-out;
 }
+.hero-img.active { opacity: 1; }
 
-.hero-img.active {
-    opacity: 1;
+/* HERO TEXT */
+.hero-text {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; width: 90%;
+    color: #fff; text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+}
+.hero-text h1 { font-size: 3rem; font-weight: 700; }
+.hero-text p { font-size: 1.2rem; margin-bottom: 20px; }
+.hero-text a {
+    display:inline-block; padding:10px 25px;
+    color:white; border:2px solid #fff;
+    background:rgba(255,255,255,0.15);
+    text-decoration:none; border-radius:5px;
+    font-weight:600;
 }
 
 /* DOTS */
 .hero-dots {
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-    text-align: center;
-    z-index: 10;
+    position:absolute; bottom:25px; width:100%;
+    text-align:center; z-index:10;
 }
-
 .dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    display: inline-block;
-    cursor: pointer;
-    background: #bbb;
-    border-radius: 50%;
-    transition: 0.3s;
+    height:12px; width:12px; margin:0 5px;
+    display:inline-block; background:#bbb;
+    border-radius:50%; cursor:pointer;
+    transition:0.3s;
 }
-
-.dot.active {
-    background: #333;
-    transform: scale(1.2);
-}
-
-/* HERO TEXT */
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    width: 90%;
-    color: #fff;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
-    z-index: 6;
-}
-
-.hero-text h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
-.hero-text a {
-    display: inline-block;
-    padding: 10px 25px;
-    color: white;
-    border: 2px solid #fff;
-    background: rgba(255,255,255,0.15);
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-}
-
-.hero-text a:hover {
-    background: #fff;
-    color: #000;
-}
+.dot.active { background:#333; transform:scale(1.2); }
 
 /* SECTION */
-.section {
-    padding: 80px 10%;
-    text-align: center;
-}
+.section { padding: 80px 10%; text-align:center; }
+.section h2 { font-size:2rem; font-weight:700; }
 
-.section h2 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-/* WHY CHOOSE US - 2 COLUMN GRID */
-#why {
-    background: #fff;
-    padding: 70px 10%;
-}
+/* WHY CHOOSE US - 3 COLUMNS */
+#why { background:#fff; padding:70px 10%; }
 
 .why-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px 35px;
-    margin-top: 40px;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap:35px;
+    margin-top:40px;
 }
 
 .why-box {
-    background: #f7f7f7;
-    border-radius: 12px;
-    padding: 25px;
-    border: 1px solid #ddd;
-    text-align: left;
-    transition: 0.3s;
+    background:#f7f7f7;
+    border-radius:12px;
+    padding:30px;
+    border:1px solid #ddd;
+    text-align:center;
+    transition:0.3s;
+}
+.why-box:hover {
+    transform:translateY(-6px);
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
 }
 
-.why-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+.why-icon {
+    font-size:40px;
+    color:#000;
+    margin-bottom:15px;
 }
 
 /* SCROLL ANIMATION */
 .reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.9s ease;
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.9s ease;
 }
-
 .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:1;
+    transform:translateY(0);
 }
 
 /* CONTACT */
 .contact-grid {
-    display: grid;
+    display:grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    gap:40px;
 }
-
 .contact-box {
-    padding: 28px;
-    background: #f6f6f6;
-    border-radius: 12px;
-    border: 1px solid #dcdcdc;
+    padding:28px;
+    background:#f6f6f6;
+    border-radius:12px;
+    border:1px solid #dcdcdc;
 }
-
 .contact-btn {
-    margin-top: 35px;
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 12px 35px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
+    margin-top:35px;
+    display:inline-block;
+    background:#000;
+    color:#fff;
+    padding:12px 35px;
+    border-radius:6px;
+    text-decoration:none;
+    font-weight:600;
 }
 
 /* FOOTER */
 footer {
-    background: #ffffff;
-    padding: 25px;
-    border-top: 1px solid #ddd;
-    text-align: center;
+    background:#ffffff;
+    padding:25px;
+    border-top:1px solid #ddd;
+    text-align:center;
 }
 
-/* MOBILE FIXES */
-@media (max-width: 768px) {
-    .hero-container { height: 60vh; margin-top: 60px; }
+/* RESPONSIVE FIXES */
+@media (max-width: 900px) {
+    .why-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
     .why-grid { grid-template-columns: 1fr; }
+    .hero-container { height:60vh; margin-top:60px; }
+    .hero-text h1 { font-size:1.8rem; }
 }
 </style>
 </head>
@@ -231,7 +179,7 @@ footer {
     <div class="container">
         <a class="navbar-brand" href="#"><img src="images/logo.png" alt="logo"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -275,29 +223,77 @@ footer {
 
     <div class="why-grid">
 
-        <div class="why-box reveal"><h3>Expert Design Team</h3><p>Skilled professionals delivering innovative and functional design concepts.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-people why-icon"></i>
+            <h3>Expert Design Team</h3>
+            <p>Skilled professionals delivering innovative and functional concepts.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Premium Quality Materials</h3><p>We use best-in-class materials ensuring durability and long-lasting value.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-patch-check why-icon"></i>
+            <h3>Premium Quality Materials</h3>
+            <p>We use top-quality materials for long-lasting, durable results.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Innovative & Modern Concepts</h3><p>Creative solutions inspired by the latest global trends.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-lightbulb why-icon"></i>
+            <h3>Innovative & Modern Concepts</h3>
+            <p>Creative solutions inspired by the latest global design trends.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Cost-Effective Solutions</h3><p>Quality designs tailored to your budget without compromise.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-cash-stack why-icon"></i>
+            <h3>Cost-Effective Solutions</h3>
+            <p>High-quality designs tailored to fit different budgets.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Timely Project Delivery</h3><p>We deliver every project on schedule—no delays.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-truck why-icon"></i>
+            <h3>Timely Project Delivery</h3>
+            <p>We complete every project on time—no delays.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>100% Client Satisfaction</h3><p>Your happiness is our priority—we refine until you love it.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-emoji-smile why-icon"></i>
+            <h3>100% Client Satisfaction</h3>
+            <p>Your satisfaction is our highest priority.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Transparent Pricing</h3><p>No hidden charges—full clarity throughout your project.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-receipt why-icon"></i>
+            <h3>Transparent Pricing</h3>
+            <p>No hidden charges—clear communication always.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Professional Project Management</h3><p>Organized planning and execution from start to finish.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-diagram-3 why-icon"></i>
+            <h3>Professional Project Management</h3>
+            <p>Organized planning & smooth execution from start to finish.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Creative Space Utilization</h3><p>Smart designs that maximize usable space efficiently.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-aspect-ratio why-icon"></i>
+            <h3>Creative Space Utilization</h3>
+            <p>Smart layouts that maximize usable space efficiently.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Sustainable & Eco-Friendly Designs</h3><p>Green design options that support environmental wellness.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-tree why-icon"></i>
+            <h3>Sustainable & Eco-Friendly Designs</h3>
+            <p>Green concepts that support a healthier environment.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>Custom Tailored Solutions</h3><p>Every project is designed uniquely based on your needs.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-sliders why-icon"></i>
+            <h3>Custom Tailored Solutions</h3>
+            <p>Every project is uniquely designed to match your needs.</p>
+        </div>
 
-        <div class="why-box reveal"><h3>End-to-End Service Support</h3><p>We handle everything—from concept to completion.</p></div>
+        <div class="why-box reveal">
+            <i class="bi bi-headset why-icon"></i>
+            <h3>End-to-End Service Support</h3>
+            <p>We assist you from concept to completion.</p>
+        </div>
 
     </div>
 </section>
@@ -305,7 +301,7 @@ footer {
 <!-- CONTACT -->
 <section class="section" id="contact" style="background:#ffffff; border-top:1px solid #dcdcdc;">
     <h2>CONTACT US</h2>
-    <p>Reach out for architectural planning, interior design, or project enquiries.</p>
+    <p>Reach out for architecture, interior design, or project enquiries.</p>
 
     <div class="contact-grid">
         <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
@@ -336,27 +332,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.currentSlide = (n)=>showSlide(n);
 
-  function autoSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-  }
+  setInterval(()=> {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+  }, 6000);
 
-  setInterval(autoSlide, 6000);
   showSlide(0);
 });
 </script>
 
-<!-- SCROLL ANIMATION SCRIPT -->
+<!-- SCROLL REVEAL SCRIPT -->
 <script>
 function revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    reveals.forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        const revealPoint = 100;
-        if (elementTop < windowHeight - revealPoint) {
-            el.classList.add('active');
-        }
+    document.querySelectorAll('.reveal').forEach((el)=>{
+        const rect = el.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight - 100;
+        if(rect < windowHeight){ el.classList.add('active'); }
     });
 }
 window.addEventListener('scroll', revealOnScroll);
@@ -364,6 +355,5 @@ window.addEventListener('load', revealOnScroll);
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
