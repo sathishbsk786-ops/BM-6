@@ -17,54 +17,42 @@
 <style>
 :root {
     --blue: #1a3c8b;
-    --blue-dark: #142f6b;
     --blue-light: #2f55c3;
+    --gray-soft: #f2f2f2;
+    --white: #ffffff;
     --text-dark: #111;
-    --text-light: #fff;
-    --bg-white: #ffffff;
-    --bg-gray: #f2f2f2;
 }
 
-/* Global */
 body {
     margin: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
-    background: var(--bg-white);
+    background: var(--white);
     color: var(--text-dark);
 }
 
-html {
-    scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 /* NAVBAR */
 .navbar {
     background: #ffffff !important;
     box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-    padding: 10px 0;
-}
-
-.navbar-brand img {
-    height: 55px;
 }
 
 .nav-link {
-    color: var(--text-dark) !important;
+    color: #000 !important;
     font-weight: 500;
 }
 
-.nav-link:hover {
-    color: var(--blue) !important;
-}
+.nav-link:hover { color: var(--blue) !important; }
 
-/* HERO SECTION */
+/* HERO */
 .hero-container {
     width: 100%;
     height: 85vh;
+    margin-top: 75px;
     position: relative;
     overflow: hidden;
-    margin-top: 75px;
 }
 
 .hero-img {
@@ -88,38 +76,30 @@ html {
     text-shadow: 0 4px 14px rgba(0,0,0,0.6);
 }
 
-.hero-text h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
+.hero-text h1 { font-size: 3rem; font-weight: 700; }
 
 .hero-text a {
     display: inline-block;
     margin-top: 15px;
     padding: 10px 28px;
-    border-radius: 5px;
     background: var(--blue);
     color: white;
+    border-radius: 5px;
     text-decoration: none;
     font-weight: 600;
 }
 
-.hero-text a:hover {
-    background: var(--blue-light);
-}
+.hero-text a:hover { background: var(--blue-light); }
 
 /* SECTION TITLE */
-.section {
-    padding: 80px 10%;
-    text-align: center;
-}
+.section { padding: 80px 10%; text-align: center; }
 
 .section h2 {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--blue);
-    position: relative;
     display: inline-block;
+    position: relative;
 }
 
 .section h2::after {
@@ -133,15 +113,31 @@ html {
     border-radius: 10px;
 }
 
-/* WHY CHOOSE US */
-#why {
-    background: var(--blue);
-    padding: 75px 10%;
-    color: white;
+/* ABOUT SECTION */
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+    align-items: center;
 }
 
-#why p {
-    color: #e2e7f6;
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    color: #333;
+}
+
+.about-img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* WHY CHOOSE US */
+#why {
+    background: var(--gray-soft);
+    padding: 75px 10%;
 }
 
 .why-grid {
@@ -155,49 +151,41 @@ html {
     background: white;
     border-radius: 12px;
     padding: 30px 25px;
-    color: var(--text-dark);
-    border: 1px solid #dcdcdc;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    transition: 0.3s ease;
+    border: 1px solid #ddd;
+    transition: 0.35s ease;
+    text-align: center;
 }
 
 .why-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 12px 28px rgba(26,60,139,0.28);
+    box-shadow: 0 15px 30px rgba(26,60,139,0.18);
     border-color: var(--blue-light);
 }
 
-/* SUPER ICONS */
+/* PREMIUM GRADIENT SUPER ICONS */
 .why-box i {
     font-size: 48px;
     margin-bottom: 15px;
-
     background: linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #5f27cd);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     transition: 0.3s ease;
 }
 
 .why-box:hover i {
     transform: scale(1.15);
-
     background: linear-gradient(45deg, #48dbfb, #1dd1a1, #feca57);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 /* CONTACT */
-#contact {
-    background: var(--bg-gray);
-    padding: 75px 10%;
-}
+#contact { background: var(--white); }
 
 .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
-    margin-top: 40px;
 }
 
 .contact-box {
@@ -205,7 +193,7 @@ html {
     padding: 28px;
     border-radius: 12px;
     border: 1px solid #ddd;
-    transition: 0.25s ease;
+    transition: 0.25s;
 }
 
 .contact-box:hover {
@@ -213,9 +201,8 @@ html {
     border-color: var(--blue);
 }
 
-/* FOOTER */
 footer {
-    background: var(--blue-dark);
+    background: var(--blue);
     padding: 25px;
     text-align: center;
     color: white;
@@ -239,7 +226,7 @@ footer {
         <div class="collapse navbar-collapse" id="navMenu">
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
                 <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
@@ -248,7 +235,6 @@ footer {
         </div>
     </div>
 </nav>
-
 
 <!-- HERO -->
 <div class="hero-container" id="hero">
@@ -263,10 +249,33 @@ footer {
     </div>
 </div>
 
+<!-- ABOUT SECTION -->
+<section class="section" id="about">
+    <h2>ABOUT US</h2>
+
+    <div class="about-container">
+        <div class="about-text">
+            <p>
+                At <strong>BM DESIGNS</strong>, we bring creativity, precision, and innovation 
+                together to create spaces that inspire. With years of architectural and 
+                interior design expertise, we craft homes and commercial spaces that are 
+                elegant, functional, and timeless.
+            </p>
+            <p>
+                Our mission is simple — to deliver designs that reflect your personality, 
+                enhance your lifestyle, and elevate your experience. From concept to 
+                completion, we ensure perfection in every detail.
+            </p>
+        </div>
+
+        <img src="images/about.jpg" class="about-img" alt="About Image">
+    </div>
+</section>
+
 <!-- WHY CHOOSE US -->
-<section class="section" id="why">
+<section id="why">
     <h2>WHY CHOOSE US</h2>
-    <p>High-quality, creative, and professional design solutions.</p>
+    <p style="color:#333; margin-top:10px;">Trusted, premium-quality design solutions for every project.</p>
 
     <div class="why-grid">
 
@@ -319,24 +328,20 @@ footer {
         <div class="contact-box"><h3>Email</h3><p>✉️ sathishbaskaran786@gmail.com</p></div>
         <div class="contact-box"><h3>Location</h3><p>📍 Ambur, Tamil Nadu</p></div>
     </div>
-
-    <br>
-    <a href="contact.html" class="btn btn-primary" style="background:var(--blue); border:none; padding:12px 28px;">Send a Message</a>
 </section>
 
-<!-- FOOTER -->
 <footer>
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
 
-<!-- SLIDER -->
+<!-- Slider Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     const slides = document.querySelectorAll(".hero-img");
     let index = 0;
 
     function show(i) {
-        slides.forEach((s, x) => s.classList.toggle("active", x === i));
+        slides.forEach((slide, x) => slide.classList.toggle("active", x === i));
     }
 
     setInterval(() => {
