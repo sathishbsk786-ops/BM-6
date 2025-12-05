@@ -248,54 +248,19 @@ footer {
 
 /* MOBILE RESPONSIVE FIXES */
 @media (max-width: 768px) {
-
-    .hero-container {
-        height: 60vh;
-        margin-top: 60px;
-    }
-
-    .hero-text h1 {
-        font-size: 1.9rem;
-        line-height: 2.2rem;
-        padding: 0 10px;
-    }
-
-    .hero-text p {
-        font-size: 1rem;
-    }
-
-    .nav-link {
-        margin-left: 0;
-        padding: 10px 0;
-        text-align: center;
-    }
-
-    .section {
-        padding: 50px 5%;
-    }
-
-    .services-grid, .contact-grid, .why-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .service-box, .why-box {
-        padding: 25px 18px;
-    }
-
-    footer {
-        padding: 18px;
-        font-size: 0.9rem;
-    }
+    .hero-container { height: 60vh; margin-top: 60px; }
+    .hero-text h1 { font-size: 1.9rem; line-height: 2.2rem; padding: 0 10px; }
+    .hero-text p { font-size: 1rem; }
+    .nav-link { margin-left: 0; padding: 10px 0; text-align: center; }
+    .section { padding: 50px 5%; }
+    .services-grid, .contact-grid, .why-grid { grid-template-columns: 1fr; }
+    .service-box, .why-box { padding: 25px 18px; }
+    footer { padding: 18px; font-size: 0.9rem; }
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 1.6rem;
-    }
-    .hero-text a {
-        padding: 8px 20px;
-        font-size: 0.9rem;
-    }
+    .hero-text h1 { font-size: 1.6rem; }
+    .hero-text a { padding: 8px 20px; font-size: 0.9rem; }
 }
 </style>
 </head>
@@ -305,9 +270,12 @@ footer {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="logo">
+        </a>
 
-        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <!-- ✔ FIXED GITHUB-READY NAV TOGGLER -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -359,17 +327,17 @@ footer {
 
         <div class="why-box">
             <h3>Quality Assurance</h3>
-            <p>We ensure top-tier quality in every stage of design and execution.</p>
+            <p>We ensure top-level quality throughout the entire project process.</p>
         </div>
 
         <div class="why-box">
             <h3>On-Time Delivery</h3>
-            <p>We value time and guarantee timely completion of all projects.</p>
+            <p>We never compromise on timelines — your project is completed as promised.</p>
         </div>
 
         <div class="why-box">
             <h3>Customer Satisfaction</h3>
-            <p>Your expectations are our priority, and we work until you're satisfied.</p>
+            <p>Your happiness is our priority — we design until you're satisfied.</p>
         </div>
     </div>
 </section>
@@ -434,13 +402,12 @@ footer {
     © 2025 BM DESIGNS. All Rights Reserved.
 </footer>
 
-<!-- SLIDER SCRIPT (Fixed & Error-Proof) -->
+<!-- SLIDER SCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const slides = Array.from(document.querySelectorAll('.hero-img'));
   const dots = Array.from(document.querySelectorAll('.dot'));
 
-  // Fallback if images missing
   slides.forEach(s => {
     s.onerror = function () {
       this.src = 'https://via.placeholder.com/1600x800?text=Image+Missing';
