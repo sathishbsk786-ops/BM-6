@@ -52,6 +52,12 @@ html { scroll-behavior: smooth; }
     margin-top: 75px;
 }
 
+.hero-slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 .hero-img {
     width: 100%;
     height: 100%;
@@ -114,6 +120,12 @@ html { scroll-behavior: smooth; }
 .section h2 { font-size: 2rem; font-weight: 700; }
 
 /* WHY CHOOSE US */
+#why {
+    background: #fff;
+    padding: 70px 10%;
+    border-bottom: 1px solid #e3e3e3;
+}
+
 .why-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -127,10 +139,11 @@ html { scroll-behavior: smooth; }
     padding: 30px 25px;
     border: 1px solid #ddd;
     transition: 0.3s;
-    opacity: 0;
-    transform: translateY(30px);
+    opacity: 0;                 /* start hidden */
+    transform: translateY(30px);/* start shifted down */
 }
 
+/* Hover lift */
 .why-box:hover {
     transform: translateY(-6px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.12);
@@ -141,7 +154,18 @@ html { scroll-behavior: smooth; }
     margin-bottom: 12px;
 }
 
-/* FIXED ICON COLORS */
+/* --- Stagger animation (restored) --- */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* When JS adds .stagger this animation runs */
+.stagger {
+  animation: fadeUp 0.8s ease forwards;
+}
+
+/* FIXED ICON COLORS (class-based — stable) */
 .icon-blue i { color: #0d6efd; }
 .icon-gold i { color: #FFD700; }
 .icon-purple i { color: #9c27b0; }
@@ -197,6 +221,8 @@ footer {
 @media (max-width: 768px) {
     .hero-container { height: 60vh; margin-top: 60px; }
     .hero-text h1 { font-size: 1.9rem; }
+    .section { padding: 50px 5%; }
+    .why-grid, .contact-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
     .hero-text h1 { font-size: 1.6rem; }
@@ -349,7 +375,9 @@ footer {
 </section>
 
 <!-- FOOTER -->
-<footer>© 2025 BM DESIGNS. All Rights Reserved.</footer>
+<footer>
+    © 2025 BM DESIGNS. All Rights Reserved.
+</footer>
 
 <!-- SLIDER SCRIPT -->
 <script>
@@ -372,6 +400,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (slides.length > 1) setInterval(autoSlide, 6000);
+
+  showSlide(0); // ensure first slide visible
 });
 </script>
 
