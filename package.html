@@ -21,11 +21,6 @@
       background: #fff !important;
       border-bottom: 1px solid #ddd;
     }
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
     .navbar-brand img {
       height: 60px;
       width: auto;
@@ -35,8 +30,6 @@
       color: #333 !important;
       font-weight: 500;
     }
-
-    /* FIX FOR TOGGLER ICON */
     .navbar-toggler {
       border: none;
     }
@@ -48,18 +41,15 @@
     .page-header {
       text-align: center;
       padding: 120px 20px 80px;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80');
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                  url('https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=1400&q=80');
       background-size: cover;
       background-position: center;
       color: #fff;
     }
     .page-header h1 {
       font-size: 3rem;
-      margin-bottom: 10px;
       font-weight: 600;
-    }
-    .page-header p {
-      font-size: 1.2rem;
     }
 
     /* PROFESSIONAL TABLE */
@@ -100,7 +90,7 @@
     }
     .gold-text { color: #d4af37; font-weight: 700; }
 
-    /* TABLE ANIMATION */
+    /* TABLE ROW ANIMATION */
     .pro-table tbody tr {
       opacity: 0;
       transform: translateY(10px);
@@ -109,6 +99,18 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(15px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* PERFECT SELECT BUTTON ALIGNMENT */
+    .pro-table tfoot td {
+      text-align: center !important;
+      padding: 20px !important;
+    }
+    .pro-table tfoot a.select-btn {
+      display: inline-block;
+      width: 100%;
+      max-width: 130px;
+      text-align: center;
     }
 
     /* SELECT BUTTON */
@@ -140,7 +142,7 @@
 
 <body>
 
-<!-- NAVBAR FIXED -->
+<!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
   <div class="container">
 
@@ -170,7 +172,7 @@
 <!-- HEADER -->
 <section class="page-header">
   <h1>Design Packages</h1>
-  <p>Choose the perfect design package tailored to your needs.</p>
+  <p>Select the perfect package for your architectural needs.</p>
 </section>
 
 <!-- PACKAGE TABLE -->
@@ -230,7 +232,7 @@
 
 <footer>© 2025 BM DESIGN. All Rights Reserved.</footer>
 
-<!-- REQUIRED BOOTSTRAP JS -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
