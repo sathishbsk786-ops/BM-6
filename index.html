@@ -16,19 +16,19 @@
 
 <style>
 :root {
-    --brick: #b84a39;
-    --brick-dark: #9e3f32;
-    --cream: #f6efe7;
-    --cream-light: #fcf8f4;
-    --border-gold: #d9b08c;
+    --gold: #d4af37;
+    --gold-light: #f5d97c;
+    --black: #000000;
+    --dark: #0d0d0d;
+    --gray: #1a1a1a;
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
-    background: var(--cream);
-    color: #221f1f;
+    background: var(--black);
+    color: #ffffff;
 }
 
 html {
@@ -37,10 +37,9 @@ html {
 
 /* NAVBAR */
 .navbar {
-    background: #ffffff !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    background: var(--black) !important;
+    box-shadow: 0 2px 12px rgba(255,255,255,0.1);
     padding: 10px 0;
-    z-index: 999;
 }
 
 .navbar-brand img {
@@ -48,9 +47,13 @@ html {
 }
 
 .nav-link {
-    color: #000 !important;
+    color: var(--gold) !important;
     font-weight: 500;
     margin-left: 15px;
+}
+
+.nav-link:hover {
+    color: var(--gold-light) !important;
 }
 
 /* HERO SECTION */
@@ -69,7 +72,8 @@ html {
     object-fit: cover;
     position: absolute;
     opacity: 0;
-    transition: opacity 1s;
+    transition: opacity 1s ease-in-out;
+    filter: brightness(65%);
 }
 
 .hero-img.active { opacity: 1; }
@@ -80,41 +84,44 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: var(--gold);
     text-align: center;
-    text-shadow: 0 4px 14px rgba(0,0,0,0.7);
+    text-shadow: 0 4px 14px rgba(0,0,0,0.9);
 }
 
 .hero-text h1 {
     font-size: 3rem;
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .hero-text a {
     display: inline-block;
     margin-top: 15px;
-    padding: 10px 25px;
+    padding: 10px 28px;
     border-radius: 5px;
-    background: var(--brick);
-    color: white;
+    background: var(--gold);
+    color: black;
     text-decoration: none;
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(184,74,57,0.4);
+    box-shadow: 0 4px 20px rgba(212,175,55,0.4);
 }
 
 .hero-text a:hover {
-    background: var(--brick-dark);
+    background: var(--gold-light);
 }
 
-/* SECTION */
+/* SECTION TITLE */
 .section {
     padding: 80px 10%;
     text-align: center;
+    background: var(--dark);
 }
 
 .section h2 {
     font-size: 2.2rem;
     font-weight: 700;
+    color: var(--gold);
     position: relative;
     display: inline-block;
 }
@@ -122,8 +129,8 @@ html {
 .section h2::after {
     content: "";
     width: 60%;
-    height: 4px;
-    background: var(--brick);
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light));
     position: absolute;
     left: 20%;
     bottom: -10px;
@@ -132,9 +139,9 @@ html {
 
 /* WHY CHOOSE US */
 #why {
-    background: var(--cream-light);
-    border-top: 3px solid var(--brick);
-    border-bottom: 3px solid var(--brick);
+    background: var(--black);
+    border-top: 2px solid var(--gold);
+    border-bottom: 2px solid var(--gold);
     padding: 70px 10%;
 }
 
@@ -146,39 +153,40 @@ html {
 }
 
 .why-box {
-    background: #ffffff;
-    border-radius: 15px;
+    background: var(--gray);
+    border-radius: 12px;
     padding: 30px 25px;
-    border: 2px solid var(--border-gold);
+    border: 1px solid rgb(90, 90, 90);
     transition: 0.35s ease;
 }
 
 .why-box:hover {
     transform: translateY(-7px);
-    box-shadow: 0 15px 30px rgba(184,74,57,0.25);
-    border-color: var(--brick);
+    border-color: var(--gold);
+    box-shadow: 0 15px 30px rgba(212,175,55,0.28);
 }
 
 /* ICONS */
 .why-box i {
-    font-size: 45px;
+    font-size: 48px;
     margin-bottom: 12px;
-    background: linear-gradient(45deg, var(--brick), #e28c7c);
+    background: linear-gradient(45deg, var(--gold), var(--gold-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: 0.35s ease;
+    transition: 0.3s ease;
 }
 
 .why-box:hover i {
-    transform: scale(1.18);
-    background: linear-gradient(45deg, var(--brick-dark), #ffb7a4);
+    transform: scale(1.15);
+    background: linear-gradient(45deg, var(--gold-light), white);
     -webkit-background-clip: text;
 }
 
 /* CONTACT SECTION */
 #contact {
-    background: #fff;
-    border-top: 3px solid var(--brick);
+    background: var(--dark);
+    padding: 75px 10%;
+    border-top: 2px solid var(--gold);
 }
 
 .contact-grid {
@@ -189,25 +197,40 @@ html {
 }
 
 .contact-box {
-    background: #fff;
+    background: var(--gray);
     padding: 28px;
     border-radius: 12px;
-    border: 2px solid var(--border-gold);
+    border: 2px solid rgba(255,255,255,0.1);
     transition: 0.3s ease;
 }
 
 .contact-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-    border-color: var(--brick);
+    border-color: var(--gold);
+    box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+}
+
+.contact-btn {
+    margin-top: 35px;
+    background: var(--gold);
+    color: black;
+    padding: 12px 35px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-btn:hover {
+    background: var(--gold-light);
 }
 
 /* FOOTER */
 footer {
-    background: var(--brick);
+    background: var(--black);
     padding: 25px;
     text-align: center;
-    color: white;
+    border-top: 2px solid var(--gold);
+    color: var(--gold);
     font-weight: 500;
 }
 
@@ -222,7 +245,7 @@ footer {
 <body>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
         <a class="navbar-brand" href="#hero"><img src="images/logo.png" alt="logo"></a>
 
@@ -251,7 +274,7 @@ footer {
 
     <div class="hero-text">
         <h1>Transforming Vision Into Timeless Design</h1>
-        <p>Architecture & Interiors Crafted With Precision</p>
+        <p>Luxury Architecture & Premium Interiors</p>
         <a href="about.html">Explore</a>
     </div>
 </div>
@@ -259,122 +282,4 @@ footer {
 <!-- WHY CHOOSE US -->
 <section class="section" id="why">
     <h2>WHY CHOOSE US</h2>
-    <p>Providing trusted, professional, and high-quality design solutions.</p>
-
-    <div class="why-grid">
-
-        <div class="why-box">
-            <i class="bi bi-people-fill"></i>
-            <h3>Expert Design Team</h3>
-            <p>Skilled professionals delivering innovative concepts.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-patch-check-fill"></i>
-            <h3>Premium Materials</h3>
-            <p>Top-quality materials for long-lasting finishes.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-lightbulb-fill"></i>
-            <h3>Modern Concepts</h3>
-            <p>Creative ideas with a modern touch.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-cash-stack"></i>
-            <h3>Cost-Effective</h3>
-            <p>Premium quality at the best pricing.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-clock-history"></i>
-            <h3>On-Time Delivery</h3>
-            <p>We keep our promise — always on schedule.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-emoji-smile-fill"></i>
-            <h3>Client Satisfaction</h3>
-            <p>We design until you're completely satisfied.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-receipt-cutoff"></i>
-            <h3>Transparent Pricing</h3>
-            <p>No hidden charges — fully clear pricing.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-diagram-3-fill"></i>
-            <h3>Professional Workflow</h3>
-            <p>Organized process from start to finish.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-aspect-ratio-fill"></i>
-            <h3>Space Optimization</h3>
-            <p>Smart planning for better living.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-tree-fill"></i>
-            <h3>Eco-Friendly Designs</h3>
-            <p>Sustainable, nature-friendly ideas.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-sliders"></i>
-            <h3>Custom Solutions</h3>
-            <p>Designs made specially for your lifestyle.</p>
-        </div>
-
-        <div class="why-box">
-            <i class="bi bi-headset"></i>
-            <h3>End-to-End Support</h3>
-            <p>We manage everything — no stress for you.</p>
-        </div>
-
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section" id="contact">
-    <h2>CONTACT US</h2>
-    <p>Reach out for architectural planning or interior design enquiries.</p>
-
-    <div class="contact-grid">
-        <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
-        <div class="contact-box"><h3>Email</h3><p>✉️ sathishbaskaran786@gmail.com</p></div>
-        <div class="contact-box"><h3>Location</h3><p>📍 Ambur, Tamil Nadu</p></div>
-    </div>
-
-    <a href="contact.html" class="contact-btn">Send a Message</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    © 2025 BM DESIGNS. All Rights Reserved.
-</footer>
-
-<!-- SLIDER SCRIPT -->
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const slides = document.querySelectorAll(".hero-img");
-    let index = 0;
-
-    function show(i) {
-        slides.forEach((s, x) => s.classList.toggle("active", x === i));
-    }
-
-    setInterval(() => {
-        index = (index + 1) % slides.length;
-        show(index);
-    }, 6000);
-
-    show(0);
-});
-</script>
-
-</body>
-</html>
+    <p style="color:#ddd;">Premium quality, trusted expertise, and unmatched design excellence.
