@@ -15,11 +15,18 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
 
 <style>
+:root {
+    --brand-orange: #ff8c00;
+    --brand-yellow: #ffcc33;
+    --light-bg: #fff7ec;
+    --section-bg: #fdf4e3;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Poppins, sans-serif;
-    background: #f7f7f7;
+    background: var(--light-bg);
     color: #000;
 }
 
@@ -30,14 +37,12 @@ html {
 /* NAVBAR */
 .navbar {
     background: #ffffff !important;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
     padding: 10px 0;
     z-index: 999;
 }
 
-.navbar-brand img {
-    height: 55px;
-}
+.navbar-brand img { height: 55px; }
 
 .nav-link {
     color: #000 !important;
@@ -53,52 +58,19 @@ html {
     position: relative;
     overflow: hidden;
     margin-top: 75px;
-}
-
-.hero-slides {
-    width: 100%;
-    height: 100%;
-    position: relative;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
 }
 
 .hero-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     position: absolute;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s;
 }
 
-.hero-img.active {
-    opacity: 1;
-}
-
-/* DOTS */
-.hero-dots {
-    position: absolute;
-    bottom: 25px;
-    width: 100%;
-    text-align: center;
-    z-index: 10;
-}
-
-.dot {
-    height: 12px;
-    width: 12px;
-    margin: 0 5px;
-    display: inline-block;
-    cursor: pointer;
-    background: #bbb;
-    border-radius: 50%;
-    transition: 0.3s;
-}
-
-.dot.active {
-    background: #333;
-    transform: scale(1.2);
-}
+.hero-img.active { opacity: 1; }
 
 /* HERO TEXT */
 .hero-text {
@@ -106,10 +78,9 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
     text-align: center;
-    width: 90%;
-    color: #fff;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
+    text-shadow: 0 3px 12px rgba(0,0,0,0.7);
 }
 
 .hero-text h1 {
@@ -117,84 +88,102 @@ html {
     font-weight: 700;
 }
 
-.hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-}
-
 .hero-text a {
     display: inline-block;
+    margin-top: 15px;
     padding: 10px 25px;
-    color: white;
-    border: 2px solid #fff;
-    background: rgba(255,255,255,0.15);
-    text-decoration: none;
     border-radius: 5px;
+    background: var(--brand-orange);
+    color: white;
+    text-decoration: none;
     font-weight: 600;
+    box-shadow: 0 4px 15px rgba(255,140,0,0.4);
 }
 
 .hero-text a:hover {
-    background: #fff;
-    color: #000;
+    background: #ffa733;
 }
 
-/* GENERAL SECTION */
+/* SECTION TITLE STYLE WITH COLOR LINE */
 .section {
     padding: 80px 10%;
     text-align: center;
 }
 
 .section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: "";
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--brand-orange), var(--brand-yellow));
+    position: absolute;
+    left: 20%;
+    bottom: -10px;
+    border-radius: 10px;
 }
 
 /* WHY CHOOSE US */
 #why {
-    background: #fff;
+    background: var(--section-bg);
     padding: 70px 10%;
-    border-bottom: 1px solid #e3e3e3;
+    border-top: 2px solid #ffdd99;
+    border-bottom: 2px solid #ffdd99;
 }
 
 .why-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 35px;
     margin-top: 40px;
 }
 
-/* Stable, no animation */
 .why-box {
-    background: #f7f7f7;
-    border-radius: 12px;
+    background: #fff;
+    border-radius: 15px;
     padding: 30px 25px;
-    border: 1px solid #ddd;
+    border: 1px solid #ffd27f;
     transition: 0.35s ease;
-    text-align: center;
 }
 
-/* Icons Always Colored */
+.why-box:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 28px rgba(255,150,0,0.35);
+    border-color: var(--brand-orange);
+}
+
+/* Color Icons */
 .why-box i {
     font-size: 45px;
     margin-bottom: 12px;
-    background: linear-gradient(45deg, #ff7a00, #ffcc00);
+    background: linear-gradient(45deg, var(--brand-orange), var(--brand-yellow));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.35s ease;
 }
 
-/* Highlight On Hover */
-.why-box:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.35);
-    border-color: #ff8800;
+.why-box:hover i {
+    transform: scale(1.18);
+    background: linear-gradient(45deg, #ff5500, #ffdd55);
+    -webkit-background-clip: text;
 }
 
-/* Icon glow hover */
-.why-box:hover i {
-    transform: scale(1.15);
-    background: linear-gradient(45deg, #ff5500, #ffaa00);
-    -webkit-background-clip: text;
+/* SERVICES HEADER ONLY */
+#services-header {
+    background: #fffbe8;
+    padding: 70px 10%;
+    border-top: 2px solid #ffd27f;
+    border-bottom: 2px solid #ffd27f;
+}
+
+#services-header p {
+    font-size: 1.1rem;
+    color: #444;
 }
 
 /* CONTACT SECTION */
@@ -203,51 +192,33 @@ html {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 40px;
     margin-top: 40px;
-    text-align: left;
 }
 
 .contact-box {
+    background: #fff;
     padding: 28px;
-    background: #f6f6f6;
     border-radius: 12px;
-    border: 1px solid #dcdcdc;
+    border: 1px solid #ffd27f;
     transition: 0.3s ease;
 }
 
 .contact-box:hover {
     transform: translateY(-6px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-
-.contact-btn {
-    margin-top: 35px;
-    display: inline-block;
-    background: #000;
-    color: #fff;
-    padding: 12px 35px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.15);
 }
 
 /* FOOTER */
 footer {
-    background: #ffffff;
-    text-align: center;
+    background: #fff4dd;
     padding: 25px;
-    border-top: 1px solid #ddd;
+    text-align: center;
+    border-top: 2px solid #ffcc66;
 }
 
-/* RESPONSIVE FIXES */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    .hero-container { height: 60vh; margin-top: 60px; }
-    .hero-text h1 { font-size: 1.9rem; }
-    .section { padding: 50px 5%; }
-    .why-grid, .contact-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 480px) {
-    .hero-text h1 { font-size: 1.6rem; }
+    .hero-container { height: 60vh; }
+    .hero-text h1 { font-size: 2rem; }
 }
 </style>
 </head>
@@ -257,11 +228,9 @@ footer {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="#hero">
-            <img src="images/logo.png" alt="logo">
-        </a>
+        <a class="navbar-brand" href="#hero"><img src="images/logo.png" alt="logo"></a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -269,6 +238,7 @@ footer {
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services-header">Services</a></li>
                 <li class="nav-item"><a class="nav-link" href="package.html">Packages</a></li>
                 <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
                 <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
@@ -278,7 +248,7 @@ footer {
     </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <div class="hero-container" id="hero">
     <div class="hero-slides">
         <img src="images/slide1.jpg" class="hero-img active">
@@ -290,12 +260,6 @@ footer {
         <h1>Transforming Vision Into Timeless Design</h1>
         <p>Architecture & Interiors Crafted With Precision</p>
         <a href="about.html">Explore</a>
-    </div>
-
-    <div class="hero-dots">
-        <span class="dot active" onclick="currentSlide(0)"></span>
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
     </div>
 </div>
 
@@ -309,82 +273,88 @@ footer {
         <div class="why-box">
             <i class="bi bi-people-fill"></i>
             <h3>Expert Design Team</h3>
-            <p>Skilled professionals delivering innovative and functional concepts.</p>
+            <p>Skilled professionals delivering innovative concepts.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-patch-check-fill"></i>
             <h3>Premium Materials</h3>
-            <p>We use only top-tier materials ensuring durability and long-lasting results.</p>
+            <p>Only top-quality materials for long-lasting finishes.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-lightbulb-fill"></i>
             <h3>Modern Concepts</h3>
-            <p>Creative ideas with modern architectural and interior trends.</p>
+            <p>Contemporary and creative design ideas.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-cash-stack"></i>
             <h3>Cost-Effective</h3>
-            <p>High-quality designs tailored to fit different budget requirements.</p>
+            <p>Quality solutions within your budget.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-clock-history"></i>
             <h3>On-Time Delivery</h3>
-            <p>Your project is completed within the promised schedule—every time.</p>
+            <p>Projects completed within schedule.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-emoji-smile-fill"></i>
             <h3>Client Satisfaction</h3>
-            <p>Your satisfaction is our ultimate goal—designs crafted just for you.</p>
+            <p>Your needs and expectations come first.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-receipt-cutoff"></i>
             <h3>Transparent Pricing</h3>
-            <p>No hidden costs. Everything is clear and upfront.</p>
+            <p>Clear, honest pricing without surprises.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-diagram-3-fill"></i>
-            <h3>Professional Management</h3>
-            <p>Well-structured design and execution workflow.</p>
+            <h3>Professional Workflow</h3>
+            <p>Seamless planning & execution process.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-aspect-ratio-fill"></i>
             <h3>Space Optimization</h3>
-            <p>Smart planning that enhances usability and function.</p>
+            <p>Making every inch functional & aesthetic.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-tree-fill"></i>
             <h3>Eco-Friendly Designs</h3>
-            <p>Sustainable and environmentally responsible solutions.</p>
+            <p>Sustainable & nature-friendly ideas.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-sliders"></i>
             <h3>Custom Solutions</h3>
-            <p>Designs tailored to your taste, needs, and lifestyle.</p>
+            <p>Personalized designs that suit your lifestyle.</p>
         </div>
 
         <div class="why-box">
             <i class="bi bi-headset"></i>
-            <h3>End-to-End Service</h3>
-            <p>We handle everything from concept to completion.</p>
+            <h3>End-to-End Support</h3>
+            <p>From concept to completion—we handle all.</p>
         </div>
 
     </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section" id="contact" style="background:#ffffff; padding:90px 10%; border-top:1px solid #dcdcdc;">
+<!-- SERVICES HEADER -->
+<section class="section" id="services-header">
+    <h2>OUR SERVICES</h2>
+    <p>We offer complete architectural and interior services tailored to your needs.</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="section" id="contact">
     <h2>CONTACT US</h2>
-    <p>Reach out for architectural planning, interior design, or project enquiries.</p>
+    <p>Reach out for architectural planning or interior design enquiries.</p>
 
     <div class="contact-grid">
         <div class="contact-box"><h3>Call Us</h3><p>📞 99943 82557</p></div>
@@ -403,32 +373,23 @@ footer {
 <!-- SLIDER SCRIPT -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const slides = document.querySelectorAll('.hero-img');
-  const dots = document.querySelectorAll('.dot');
-  let slideIndex = 0;
+    const slides = document.querySelectorAll('.hero-img');
+    let index = 0;
 
-  function showSlide(n) {
-    slides.forEach((s, i) => s.classList.toggle('active', i === n));
-    dots.forEach((d, i) => d.classList.toggle('active', i === n));
-    slideIndex = n;
-  }
+    function showSlide(i) {
+        slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+        index = i;
+    }
 
-  window.currentSlide = function(n) {
-    showSlide(n);
-  };
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 6000);
 
-  function autoSlide() {
-    slideIndex = (slideIndex + 1) % slides.length;
-    showSlide(slideIndex);
-  }
-
-  if (slides.length > 1) setInterval(autoSlide, 6000);
-
-  showSlide(0);
+    showSlide(0);
 });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
